@@ -15,10 +15,12 @@
 </head>
 
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">My Portfolio</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -33,6 +35,7 @@
         </div>
     </nav>
 
+    <!-- Home Section -->
     <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center">
         <div class="container">
             <h1 class="text-white">I am <span id="typed-text"></span></h1>
@@ -40,58 +43,50 @@
         </div>
     </header>
 
-
-
-    
+    <!-- About Section -->
     <section id="about" class="py-5">
-     <h2>About Me</h2>
-        
-        <div id="quick-info">
-            <p>I'm Samman Aryal, a passionate Electrical Engineering and Information Technology student at Hochschule Ravensburg Weingarten University of Applied Sciences. With experience in software engineering, IT operations, and robotics, I bring a unique blend of skills to every project.</p>
-            
-            <h3>Key Skills:</h3>
-            <ul>
-                <li>Software Development (C, Java, Python, JavaScript, Flutter)</li>
-                <li>IT Operations & Project Management</li>
-                <li>Microcontroller Programming & Robotics</li>
-                <li>Multilingual: Nepali, English, German, Hindi</li>
-            </ul>
+        <div class="container">
+            <h2>About Me</h2>
+            <div id="quick-info">
+                <p>I'm [Your Name], a passionate Electrical Engineering and Information Technology student at Hochschule Ravensburg Weingarten University of Applied Sciences. With experience in software engineering, IT operations, and robotics, I bring a unique blend of skills to every project.</p>
+                <h3>Key Skills:</h3>
+                <ul>
+                    <li>Software Development (C, Java, Python, JavaScript, Flutter)</li>
+                    <li>IT Operations & Project Management</li>
+                    <li>Microcontroller Programming & Robotics</li>
+                    <li>Multilingual: Nepali, English, German, Hindi</li>
+                </ul>
+                <button id="view-more-btn">View More</button>
+            </div>
 
-            <button id="view-more-btn">View More</button>
+            <div id="full-info" style="display: none;">
+                <h3>Professional Experience</h3>
+                <p>My journey includes roles at Mercedes-Benz AG and eCovery GmbH, where I've worked on automation, test support tools, and mobile app development.</p>
+
+                <h3>Technical Proficiency</h3>
+                <ul>
+                    <li>Programming Languages: C, Java, Python, JavaScript, TypeScript, HTML, Dart</li>
+                    <li>Frameworks & Tools: Flutter, Git, Linux, RabbitMQ, Microsoft Office 365</li>
+                    <li>Microcontroller Experience: Intel 8051, EFM8BB3, Raspberry Pi, LPC1766</li>
+                    <li>Robotics: KUKA Robot programming and simulation</li>
+                </ul>
+
+                <h3>Projects & Practical Experience</h3>
+                <ul>
+                    <li>Microcontroller programming using Arduino IDE</li>
+                    <li>Circuit design and simulation using LTSpice and Eagle</li>
+                    <li>VHDL-based circuit design for generating and displaying sine waves on a VGA monitor</li>
+                </ul>
+
+                <h3>Personal Interests</h3>
+                <p>I'm an avid reader, football enthusiast, and nature lover. Passionate about traveling and technology trends, I also engage in volunteer work to give back to the community.</p>
+
+                <button id="view-less-btn">View Less</button>
+            </div>
         </div>
-
-        <div id="full-info" style="display: none;">
-            <h3>Professional Experience</h3>
-            <p>My journey includes roles at Mercedes-Benz AG and eCovery GmbH, where I've worked on automation, test support tools, and mobile app development.</p>
-
-            <h3>Technical Proficiency</h3>
-            <ul>
-                <li>Programming Languages: C, Java, Python, JavaScript, TypeScript, HTML, Dart</li>
-                <li>Frameworks & Tools: Flutter, Git, Linux, RabbitMQ, Microsoft Office 365</li>
-                <li>Microcontroller Experience: Intel 8051, EFM8BB3, Raspberry Pi, LPC1766</li>
-                <li>Robotics: KUKA Robot programming and simulation</li>
-            </ul>
-
-            <h3>Projects & Practical Experience</h3>
-            <ul>
-                <li>Microcontroller programming using Arduino IDE</li>
-                <li>Circuit design and simulation using LTSpice and Eagle</li>
-                <li>VHDL-based circuit design for generating and displaying sine waves on a VGA monitor</li>
-            </ul>
-
-            <h3>Personal Interests</h3>
-            <p>I'm an avid reader, football enthusiast, and nature lover. Passionate about traveling and technology trends, I also engage in volunteer work to give back to the community.</p>
-
-            <button id="view-less-btn">View Less</button>
-        </div>
-        
     </section>
 
-
-
-
-
-    
+    <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
             <h2 class="text-center">Projects</h2>
@@ -103,6 +98,18 @@
             </div>
             <div class="row" id="projects-container">
                 <!-- Project items will be dynamically loaded here -->
+                <!-- Example of a project item -->
+                <!--
+                <div class="col-md-6 mb-4 project-item web">
+                    <div class="card h-100">
+                        <img src="project-image.jpg" class="card-img-top project-image" alt="Project Title">
+                        <div class="card-body">
+                            <h5 class="card-title">Project Title</h5>
+                            <p class="card-text">Project description goes here.</p>
+                        </div>
+                    </div>
+                </div>
+                -->
             </div>
             <div class="text-center">
                 <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
@@ -110,49 +117,50 @@
         </div>
     </section>
 
-<section id="education" class="py-5">
-    <div class="container">
-        <h2 class="text-center">Education Background</h2>
-        <div class="timeline">
-            <ul>
-                <li>
-                    <div class="timeline-image">
-                        <h4>01/03/2021</h4>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Bachelor in Electrical Engineering and Information Technology</h4>
-                            <h4 class="subheading">Hochschule Ravensburg Weingarten University of Applied Sciences</h4>
+    <!-- Education Section -->
+    <section id="education" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Education Background</h2>
+            <div class="timeline">
+                <ul>
+                    <li>
+                        <div class="timeline-image">
+                            <h4>01/03/2021</h4>
                         </div>
-                        <div class="timeline-body">
-                            <p>I am currently pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Hochschule Ravensburg Weingarten, located in Weingarten, Germany.</p>
-                            <p>Address: Doggenriedstraße, 88250, Weingarten, Germany</p>
-                            <p>Website: <a href="https://www.rwu.de" target="_blank">www.rwu.de</a></p>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Bachelor in Electrical Engineering and Information Technology</h4>
+                                <h4 class="subheading">Hochschule Ravensburg Weingarten University of Applied Sciences</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>I am currently pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Hochschule Ravensburg Weingarten, located in Weingarten, Germany.</p>
+                                <p>Address: Doggenriedstraße, 88250, Weingarten, Germany</p>
+                                <p>Website: <a href="https://www.rwu.de" target="_blank">www.rwu.de</a></p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <h4>01/04/2017</h4>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4>Abitur (High School Diploma)</h4>
-                            <h4 class="subheading">Trinity International College</h4>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>01/04/2017</h4>
                         </div>
-                        <div class="timeline-body">
-                            <p>I completed my Abitur (High School Diploma) at Trinity International College in Kathmandu, Nepal.</p>
-                            <p>Address: Kathmandu, Nepal</p>
-                            <p>Website: <a href="https://www.trinity.edu.np" target="_blank">www.trinity.edu.np</a></p>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Abitur (High School Diploma)</h4>
+                                <h4 class="subheading">Trinity International College</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>I completed my Abitur (High School Diploma) at Trinity International College in Kathmandu, Nepal.</p>
+                                <p>Address: Kathmandu, Nepal</p>
+                                <p>Website: <a href="https://www.trinity.edu.np" target="_blank">www.trinity.edu.np</a></p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
+    <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="text-center">Contact</h2>
@@ -171,6 +179,7 @@
         </div>
     </section>
 
+    <!-- Floating Boxes -->
     <div class="floating-boxes">
         <div class="box"></div>
         <div class="box"></div>
@@ -179,7 +188,5 @@
         <div class="box"></div>
     </div>
 
+    <!-- Dark Mode Toggle Button -->
     <button id="dark-mode-toggle" class="btn btn-outline-light position-fixed" style="bottom: 20px; right: 20px;">Dark Mode</button>
-</body>
-
-</html>
