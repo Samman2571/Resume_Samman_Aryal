@@ -207,4 +207,3 @@ $(document).ready(function() {
         $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
     });
 });
-
