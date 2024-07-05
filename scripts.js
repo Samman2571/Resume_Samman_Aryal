@@ -1,9 +1,9 @@
 $(document).ready(function() {
     // Smooth scrolling for internal links
-    $('a.nav-link, .btn').on('click', function(event) {
-        if (this.hash !== "") {
+    $('a.nav-link, .btn, a[href^="#"]').on('click', function(event) {
+        var hash = this.hash;
+        if (hash && $(hash).length > 0) { // Ensure the target exists
             event.preventDefault();
-            var hash = this.hash;
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 56
             }, 800);
@@ -69,7 +69,7 @@ $(document).ready(function() {
         const src = img.getAttribute('data-src');
         if (!src) { return; }
         img.src = src;
-    }
+    });
 
     // Form validation and submission
     $('#contact-form').submit(function(e) {
@@ -131,7 +131,7 @@ $(document).ready(function() {
                     `;
                     $('#projects-container').append(projectHtml);
                 });
-                reveal();
+                animateTimelinePanels(); // Trigger animation after new projects are loaded
             },
             error: function() {
                 alert('Error loading more projects');
@@ -139,63 +139,38 @@ $(document).ready(function() {
         });
     });
 
-
-
-   // Toggle thesis details function
+    // Toggle thesis details function
     function toggleThesisDetails() {
         var details = document.getElementById("thesis-details");
-        if (details.style.display === "none") {
-            details.style.display = "block";
-        } else {
-            details.style.display = "none";
-        }
+        details.style.display = details.style.display === "none" ? "block" : "none";
     }
 
-    
-   // Reveal animations
-    function reveal() {
-        var reveals = document.querySelectorAll(".reveal, .timeline-panel");
-        reveals.forEach(function(reveal) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveal.getBoundingClientRect().top;
-            var elementVisible = 150;
-            if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add("active");
-            } else {
-                reveal.classList.remove("active");
+    // Animate timeline panels on page load and scroll
+    function animateTimelinePanels() {
+        var timelinePanels = document.querySelectorAll('.timeline-panel');
+        timelinePanels.forEach(function(panel) {
+            if (isElementInViewport(panel)) {
+                panel.classList.add('active');
             }
         });
     }
-    window.addEventListener("scroll", reveal);
 
-    // Animate skill progress bars
-    function animateSkills() {
-        $('.skill-progress-bar').each(function() {
-            var $this = $(this);
-            var width = $this.data('width');
-            $this.css('width', width + '%');
-        });
+    // Check if element is in viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
     }
 
-  
-
     // Call functions on page load
-    reveal();
-    window.addEventListener("scroll", reveal);
-    animateSkills();
+    animateTimelinePanels();
+    window.addEventListener("scroll", animateTimelinePanels);
 
-    // Smooth scroll for internal links
-      $('a[href^="#"]').on('click', function(event) {
-        var hash = this.hash;
-        if (hash && $(hash).length > 0) { // Ensure the target exists
-            event.preventDefault();
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top - 56
-            }, 800);
-        }
-    });
-
-    // Scroll back to top button
+    // Smooth scroll back to top button
     var backToTopBtn = $('<button/>', {
         class: 'btn btn-primary back-to-top',
         html: '<i class="fa fa-chevron-up"></i>',
