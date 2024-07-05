@@ -1,218 +1,210 @@
-/* General styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #fff;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
-}
+$(document).ready(function() {
+    // Smooth scrolling
+    $('a.nav-link, .btn, .back-to-top').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 56
+            }, 800);
+        }
+    });
 
-.container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-}
+    // Navbar color change on scroll
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 50) {
+            $('.navbar').addClass('navbar-scrolled');
+        } else {
+            $('.navbar').removeClass('navbar-scrolled');
+        }
+    });
 
-.section {
-    padding: 40px 0;
-}
+    // Parallax effect on home section
+    $(window).scroll(function() {
+        var scrollPosition = $(this).scrollTop();
+        $('#home').css('background-position-y', -(scrollPosition * 0.5) + 'px');
+    });
 
-.navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    transition: background-color 0.3s, color 0.3s;
-}
+    // Typing effect for home section
+    const typed = new Typed('#typed-text', {
+        strings: ['Software Engineer', 'Electrical Engineering Student', 'Technology Enthusiast'],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true
+    });
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
+    // Project filter
+    $('.filter-btn').on('click', function() {
+        var category = $(this).attr('data-filter');
+        if (category === 'all') {
+            $('.project-item').show('1000');
+        } else {
+            $('.project-item').not('.' + category).hide('1000');
+            $('.project-item').filter('.' + category).show('1000');
+        }
+        $(this).addClass('active').siblings().removeClass('active');
+    });
 
-.navbar a:hover {
-    color: #f0f0f0;
-}
+    // Lazy loading images
+    const images = document.querySelectorAll('[data-src]');
+    const config = {
+        rootMargin: '0px 0px 50px 0px',
+        threshold: 0
+    };
 
-/* Dark mode styles */
-body.dark-mode {
-    background-color: #333;
-    color: #fff;
-}
+    let observer = new IntersectionObserver(function(entries, self) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                preloadImage(entry.target);
+                self.unobserve(entry.target);
+            }
+        });
+    }, config);
 
-body.dark-mode .navbar {
-    background-color: #111;
-}
+    images.forEach(image => {
+        observer.observe(image);
+    });
 
-body.dark-mode .navbar a {
-    color: #fff;
-}
-
-body.dark-mode .navbar a:hover {
-    color: #ccc;
-}
-
-/* Button styles */
-#dark-mode-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    z-index: 1100;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-#dark-mode-toggle:hover {
-    background-color: #555;
-}
-
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Home section styles */
-#home {
-    height: 100vh;
-    background-image: url('../images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-#home .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    z-index: 1;
-}
-
-#home h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-#home p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-/* Typing effect */
-#typed-text {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-/* Project filter */
-.project-filter {
-    margin-bottom: 30px;
-}
-
-.project-filter .btn {
-    margin-right: 10px;
-}
-
-/* Project items */
-.project-item {
-    margin-bottom: 30px;
-}
-
-.project-item .card {
-    transition: transform 0.3s;
-}
-
-.project-item:hover .card {
-    transform: translateY(-5px);
-}
-
-.project-item .card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-/* Form styles */
-.form-control {
-    margin-bottom: 20px;
-}
-
-.form-control.error {
-    border-color: #dc3545;
-}
-
-.form-control.error:focus {
-    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
-}
-
-/* Floating boxes */
-.box {
-    transition: transform 0.3s;
-}
-
-.box:hover {
-    transform: scale(1.1) rotate(45deg);
-}
-
-/* Reveal animation */
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s, transform 0.6s;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Skill progress bars */
-.skill-progress-bar {
-    height: 10px;
-    background-color: #007bff;
-    margin-bottom: 10px;
-}
-
-/* Back to top button */
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 2rem;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px 15px;
-    display: none;
-}
-
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
-/* Footer */
-.footer {
-    background-color: #f8f9fa;
-    padding: 30px 0;
-    text-align: center;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 8px 0;
+    function preloadImage(img) {
+        const src = img.getAttribute('data-src');
+        if (!src) { return; }
+        img.src = src;
     }
-}
+
+    // Form validation and submission
+    $('#contact-form').submit(function(e) {
+        e.preventDefault();
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var message = $('#message').val();
+        var errors = [];
+
+        if (name.length < 2) {
+            errors.push('Name must be at least 2 characters long');
+        }
+
+        if (!validateEmail(email)) {
+            errors.push('Please enter a valid email address');
+        }
+
+        if (message.length < 10) {
+            errors.push('Message must be at least 10 characters long');
+        }
+
+        if (errors.length > 0) {
+            alert(errors.join('\n'));
+        } else {
+            alert('Thank you for your message, ' + name + '! I will get back to you soon.');
+            this.reset();
+        }
+    });
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    // Interactive floating boxes
+    $('.box').on('mouseenter', function() {
+        $(this).css('transform', 'scale(1.2) rotate(45deg)');
+    }).on('mouseleave', function() {
+        $(this).css('transform', '');
+    });
+
+    // Dynamic content loading for projects
+    $('#load-more-projects').on('click', function() {
+        $.ajax({
+            url: 'more-projects.json', // You'll need to create this JSON file
+            dataType: 'json',
+            success: function(data) {
+                data.projects.forEach(function(project) {
+                    var projectHtml = `
+                        <div class="col-md-6 mb-4 project-item ${project.category} reveal">
+                            <div class="card h-100">
+                                <img src="${project.image}" class="card-img-top project-image" alt="${project.title}">
+                                <div class="card-body">
+                                    <h5 class="card-title">${project.title}</h5>
+                                    <p class="card-text">${project.description}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    $('#projects-container').append(projectHtml);
+                });
+                reveal();
+            },
+            error: function() {
+                alert('Error loading more projects');
+            }
+        });
+    });
+
+    // Reveal animations
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        reveals.forEach(function(reveal) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveal.getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveal.classList.add("active");
+            } else {
+                reveal.classList.remove("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", reveal);
+
+    // Animate skill progress bars
+    function animateSkills() {
+        $('.skill-progress-bar').each(function() {
+            var $this = $(this);
+            var width = $this.data('width');
+            $this.css('width', width + '%');
+        });
+    }
+
+    // Call functions on page load
+    reveal();
+    animateSkills();
+
+    // Smooth scroll for internal links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 70
+            }, 1000);
+        }
+    });
+
+    // Scroll back to top button
+    var backToTopBtn = $('<button/>', {
+        class: 'btn btn-primary back-to-top',
+        html: '<i class="fa fa-chevron-up"></i>',
+        click: function() {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+        }
+    }).appendTo('body');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            backToTopBtn.fadeIn();
+        } else {
+            backToTopBtn.fadeOut();
+        }
+    });
+
+    // Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Dark mode toggle
+    $('#dark-mode-toggle').on('click', function() {
+        $('body').toggleClass('dark-mode');
+        var isDarkMode = $('body').hasClass('dark-mode');
+        $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
+    });
+});
 
