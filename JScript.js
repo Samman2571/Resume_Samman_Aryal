@@ -119,9 +119,9 @@ $(document).ready(function() {
             success: function(data) {
                 data.projects.forEach(function(project) {
                     var projectHtml = `
-                        <div class="col-md-6 mb-4 project-item ${project.category}">
+                        <div class="col-md-6 mb-4 project-item ${project.category} reveal">
                             <div class="card h-100">
-                                <img src="${project.image}" class="card-img-top" alt="${project.title}">
+                                <img src="${project.image}" class="card-img-top project-image" alt="${project.title}">
                                 <div class="card-body">
                                     <h5 class="card-title">${project.title}</h5>
                                     <p class="card-text">${project.description}</p>
@@ -131,6 +131,7 @@ $(document).ready(function() {
                     `;
                     $('#projects-container').append(projectHtml);
                 });
+                reveal();
             },
             error: function() {
                 alert('Error loading more projects');
@@ -138,53 +139,44 @@ $(document).ready(function() {
         });
     });
 
-    // Animated counter for skills
-    $('.counter').each(function() {
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 2000,
-            easing: 'swing',
-            step: function(now) {
-                $(this).text(Math.ceil(now));
+    // Reveal animations
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
             }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+
+    // Animate skill progress bars
+    function animateSkills() {
+        $('.skill-progress-bar').each(function() {
+            var $this = $(this);
+            var width = $this.data('width');
+            $this.css('width', width + '%');
         });
-    });
+    }
 
-    // Animated skill bars
-    $('.progress-bar').each(function() {
-        $(this).animate({
-            width: $(this).attr('aria-valuenow') + '%'
-        }, 1000);
-    });
+    // Call functions on page load
+    reveal();
+    animateSkills();
 
-    // Scroll reveal animation
-    ScrollReveal().reveal('.reveal', { 
-        delay: 200,
-        distance: '50px',
-        duration: 500,
-        easing: 'cubic-bezier(0.5, 0, 0, 1)',
-        interval: 0,
-        opacity: 0,
-        origin: 'bottom',
-        rotate: {
-            x: 0,
-            y: 0,
-            z: 0
-        },
-        scale: 1,
-        cleanup: false,
-        container: window.document.documentElement,
-        desktop: true,
-        mobile: true,
-        reset: false,
-        useDelay: 'always',
-        viewFactor: 0.0,
-        viewOffset: {
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0
+    // Smooth scroll for internal links
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top - 70
+            }, 1000);
         }
     });
 });
