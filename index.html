@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Custom CSS for page breaks */
         .page-break {
             page-break-before: always;
+        }
+
+        /* General section styles */
+        section {
+            padding: 60px 0;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -30,8 +34,18 @@
                 }
             });
 
-            // Other JavaScript functionalities as per your existing code
-            // Make sure to include your scripts.js here if it contains additional functionality
+            // Typed.js initialization for "I am" text
+            const typed = new Typed('#typed-text', {
+                strings: ['Software Engineer', 'Electrical Engineering Student', 'Technology Enthusiast'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+
+            // Function to toggle thesis details
+            $('#toggle-thesis-details').on('click', function() {
+                $('#thesis-details').toggle();
+            });
         });
     </script>
 </head>
@@ -55,21 +69,21 @@
         </div>
     </nav>
 
-    <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center page-break">
+    <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center">
         <div class="container">
             <h1 class="text-white">I am <span id="typed-text"></span></h1>
             <a href="#about" class="btn btn-outline-light mt-4">Learn More</a>
         </div>
     </header>
 
-    <section id="about" class="py-5 page-break">
+    <section id="about" class="py-5">
         <div class="container">
             <h2 class="text-center">About Me</h2>
             <p class="text-muted text-center">I am a passionate software engineer and an electrical engineering student.</p>
         </div>
     </section>
 
-    <section id="thesis" class="py-5 page-break">
+    <section id="thesis" class="py-5">
         <div class="container">
             <h2 class="text-center">Thesis</h2>
             <div class="text-center mb-4">
@@ -84,7 +98,7 @@
                     <p>
                         My thesis involves using PyTorch to simulate heat conduction in a 2-dimensional space. I am implementing Physics-Informed Neural Networks (PINNs) to efficiently model the heat transfer processes. This approach combines the accuracy of physics-based models with the flexibility and scalability of neural networks.
                     </p>
-                    <button class="btn btn-outline-primary" onclick="toggleThesisDetails()">See Details</button>
+                    <button id="toggle-thesis-details" class="btn btn-outline-primary">See Details</button>
                     <div id="thesis-details" style="display: none;">
                         <p>
                             This thesis aims to demonstrate how PINNs can be trained to predict temperature distributions in complex geometries without relying on traditional mesh-based methods. By leveraging PyTorch's computational graph and automatic differentiation capabilities, I am exploring how neural networks can be adapted to enforce physical constraints directly into the learning process.
@@ -98,7 +112,25 @@
         </div>
     </section>
 
-    <section id="education" class="py-5 page-break">
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="education" class="py-5">
         <div class="container">
             <h2 class="text-center">Education Background</h2>
             <div class="timeline">
@@ -140,45 +172,8 @@
         </div>
     </section>
 
-    <section id="contact" class="py-5 page-break">
-        <div class="container">
-            <h2 class="text-center">Contact</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <input type="text" id="name" class="form-control" placeholder="Name">
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" class="form-control" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
-                </div>
-                <button type="submit" class="btn btn-outline-light">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="floating-boxes">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </div>
-
     <button id="dark-mode-toggle" class="btn btn-outline-light position-fixed" style="bottom: 20px; right: 20px;">Dark Mode</button>
 
-    <script>
-        // Function to toggle thesis details visibility
-        function toggleThesisDetails() {
-            var details = document.getElementById("thesis-details");
-            if (details.style.display === "none") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>
 </body>
 
 </html>
