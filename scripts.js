@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    // Smooth scrolling for internal links and buttons
-    $('a.nav-link, .btn, .navbar-brand').on('click', function(event) {
+    // Smooth scrolling
+    $('a.nav-link, .btn').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
@@ -36,7 +36,7 @@ $(document).ready(function() {
     // Project filter
     $('.filter-btn').on('click', function() {
         var category = $(this).attr('data-filter');
-        if (category == 'all') {
+        if (category === 'all') {
             $('.project-item').show('1000');
         } else {
             $('.project-item').not('.' + category).hide('1000');
@@ -172,11 +172,38 @@ $(document).ready(function() {
     // Smooth scroll for internal links
     $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));
-        if( target.length ) {
+        if (target.length) {
             event.preventDefault();
             $('html, body').stop().animate({
                 scrollTop: target.offset().top - 70
             }, 1000);
         }
+    });
+
+    // Scroll back to top button
+    var backToTopBtn = $('<button/>', {
+        class: 'btn btn-primary back-to-top',
+        html: '<i class="fa fa-chevron-up"></i>',
+        click: function() {
+            $('html, body').animate({ scrollTop: 0 }, 800);
+        }
+    }).appendTo('body');
+
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 300) {
+            backToTopBtn.fadeIn();
+        } else {
+            backToTopBtn.fadeOut();
+        }
+    });
+
+    // Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    // Dark mode toggle
+    $('#dark-mode-toggle').on('click', function() {
+        $('body').toggleClass('dark-mode');
+        var isDarkMode = $('body').hasClass('dark-mode');
+        $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
     });
 });
