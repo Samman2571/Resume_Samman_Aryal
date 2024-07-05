@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +23,8 @@
         .navbar {
             background-color: #333;
             transition: background-color 0.3s;
+            position: relative;
+            z-index: 10;
         }
 
         .navbar a {
@@ -39,20 +40,23 @@
             background-color: #000;
         }
 
-      #home {
-    background: url('https://github.com/Samman2571/Resume_Samman_Aryal/blob/main/Picture.jpg') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-}
-
+        #home {
+            background: url('https://github.com/Samman2571/Resume_Samman_Aryal/blob/main/Picture.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
 
         #about,
         #projects,
         #contact {
             padding: 50px 0;
+            position: relative;
+            z-index: 0;
         }
 
         .btn-outline-light {
@@ -263,157 +267,58 @@
 
     <!-- Home Section -->
     <section id="home">
-    <div class="container text-center text-white">
-        <h1>Welcome to My Portfolio</h1>
-        <p>I am a <span id="typed-text"></span></p>
-    </div>
-</section>
+        <div class="container text-center text-white">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am a <span id="typed-text"></span></p>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h2>About Me</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
-                        hendrerit, sit amet fringilla odio fermentum. Duis quis ullamcorper dui.</p>
-                </div>
-                <div class="col-lg-6">
-                    <h2>Skills</h2>
-                    <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 90%;" data-width="90">90%</div>
-                    </div>
-                    <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 80%;" data-width="80">80%</div>
-                    </div>
-                    <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 70%;" data-width="70">70%</div>
-                    </div>
-                </div>
-            </div>
+            <h2>About Me</h2>
+            <p>Some information about yourself.</p>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="text-center mb-5">Projects</h2>
-            <div class="row">
-                <div class="col-md-4 project-item reveal">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 1</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 project-item reveal">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 2</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 project-item reveal">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Project 3</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-12">
-                    <button type="button" class="collapsible">Experience 1</button>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
-                            hendrerit, sit amet fringilla odio fermentum.</p>
-                    </div>
-                    <button type="button" class="collapsible">Experience 2</button>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
-                            hendrerit, sit amet fringilla odio fermentum.</p>
-                    </div>
-                    <button type="button" class="collapsible">Experience 3</button>
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
-                            hendrerit, sit amet fringilla odio fermentum.</p>
-                    </div>
-                </div>
-            </div>
+            <h2>My Projects</h2>
+            <p>Some information about your projects.</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="text-center mb-5">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-dark btn-block">Send Message</button>
-                    </form>
-                </div>
-            </div>
+            <h2>Contact Me</h2>
+            <p>Some information about how to contact you.</p>
         </div>
     </section>
 
     <!-- Dark Mode Toggle Button -->
     <button id="dark-mode-toggle">
         <i id="dark-mode-icon" class="fas fa-moon"></i>
+        Dark Mode
     </button>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top-btn">
+    <button class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Floating Boxes Background -->
+    <!-- Floating Boxes -->
     <div class="floating-boxes">
-        <div class="box" style="left: 10%; animation-duration: 15s;"></div>
-        <div class="box" style="left: 20%; animation-duration: 20s;"></div>
-        <div class="box" style="left: 30%; animation-duration: 25s;"></div>
-        <div class="box" style="left: 40%; animation-duration: 30s;"></div>
-        <div class="box" style="left: 50%; animation-duration: 35s;"></div>
-        <div class="box" style="left: 60%; animation-duration: 40s;"></div>
-        <div class="box" style="left: 70%; animation-duration: 45s;"></div>
-        <div class="box" style="left: 80%; animation-duration: 50s;"></div>
-        <div class="box" style="left: 90%; animation-duration: 55s;"></div>
+        <div class="box" style="top: 10%; left: 20%;"></div>
+        <div class="box" style="top: 40%; left: 50%;"></div>
+        <div class="box" style="top: 70%; left: 80%;"></div>
     </div>
 
-    <!-- jQuery, Bootstrap JS, and custom script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Smooth scrolling for navigation links
-            $('a.nav-link').on('click', function (event) {
-                if (this.hash !== "") {
-                    event.preventDefault();
-                    const hash = this.hash;
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function () {
-                        window.location.hash = hash;
-                    });
-                }
-            });
-
             // Navbar scroll effect
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
@@ -426,50 +331,7 @@
             // Dark mode toggle
             $('#dark-mode-toggle').click(function () {
                 $('body').toggleClass('dark-mode');
-                const icon = $('#dark-mode-icon');
-                if ($('body').hasClass('dark-mode')) {
-                    icon.removeClass('fa-moon').addClass('fa-sun');
-                } else {
-                    icon.removeClass('fa-sun').addClass('fa-moon');
-                }
-            });
-
-            // Typing animation
-            var typed = new Typed("#typed-text", {
-                strings: ["Developer", "Designer", "Creator"],
-                typeSpeed: 100,
-                backSpeed: 50,
-                loop: true
-            });
-
-            // Lazy load images
-            const images = document.querySelectorAll('[data-src]');
-            const preloadImage = img => {
-                const src = img.getAttribute('data-src');
-                if (!src) {
-                    return;
-                }
-                img.src = src;
-            };
-
-            const imgOptions = {
-                threshold: 0,
-                rootMargin: '0px 0px 200px 0px'
-            };
-
-            const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    } else {
-                        preloadImage(entry.target);
-                        imgObserver.unobserve(entry.target);
-                    }
-                });
-            }, imgOptions);
-
-            images.forEach(image => {
-                imgObserver.observe(image);
+                $('#dark-mode-icon').toggleClass('fa-sun fa-moon');
             });
 
             // Back to top button
@@ -481,35 +343,41 @@
                 }
             });
 
-            $('#back-to-top-btn').click(function () {
+            $('.back-to-top').click(function () {
                 $('html, body').animate({ scrollTop: 0 }, 800);
                 return false;
             });
 
-            // Text reveal animation on scroll
-            const revealElements = document.querySelectorAll('.reveal');
-
-            const observerOptions = {
-                rootMargin: '0px',
-                threshold: 0.3
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            revealElements.forEach(element => {
-                observer.observe(element);
+            // Typing animation
+            var typed = new Typed("#typed-text", {
+                strings: ["Web Developer", "Designer", "Freelancer"],
+                typeSpeed: 50,
+                backSpeed: 25,
+                loop: true
             });
 
-            // Collapsible sections for experience
+            // Reveal on scroll
+            function reveal() {
+                var reveals = document.querySelectorAll(".reveal");
+                for (var i = 0; i < reveals.length; i++) {
+                    var windowHeight = window.innerHeight;
+                    var elementTop = reveals[i].getBoundingClientRect().top;
+                    var elementVisible = 150;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveals[i].classList.add("active");
+                    } else {
+                        reveals[i].classList.remove("active");
+                    }
+                }
+            }
+
+            window.addEventListener("scroll", reveal);
+
+            // Collapsible experience section
             var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
                 coll[i].addEventListener("click", function () {
                     this.classList.toggle("active");
                     var content = this.nextElementSibling;
@@ -522,7 +390,5 @@
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
-
 </html>
