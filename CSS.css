@@ -1,198 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samman Aryal - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#navbar">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Samman Aryal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding-top: 56px;
+}
 
-    <div class="floating-boxes">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </div>
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    transition: all 0.4s;
+}
 
-    <section id="home" class="vh-100 d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-1 mb-3 text-white">Samman Aryal</h1>
-            <p class="lead mb-4 text-white">I am a <span id="typed-text"></span></p>
-            <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
-        </div>
-    </section>
+.navbar-scrolled {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
 
-    <section id="about" class="py-5 reveal">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white">About Me</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <img src="https://via.placeholder.com/400" alt="Samman Aryal" class="img-fluid rounded-circle mb-3">
-                </div>
-                <div class="col-md-6">
-                    <p>Born on 25/01/2001, I am a Nepali national currently residing in Weingarten, Germany. I am pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Hochschule Ravensburg Weingarten University of Applied Sciences.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone me-2"></i> (+49) 15141369367</li>
-                        <li><i class="fas fa-envelope me-2"></i> sammanaryal100@gmail.com</li>
-                        <li><i class="fab fa-linkedin me-2"></i> <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">Samman Aryal</a></li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Briachstr. 10, 88250, Weingarten, Deutschland</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+.navbar-scrolled .navbar-brand,
+.navbar-scrolled .nav-link {
+    color: #000 !important;
+}
 
-    <section id="portfolio" class="py-5 reveal">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white">Portfolio</h2>
-            <div class="text-center mb-4">
-                <button class="btn btn-outline-light filter-btn active" data-filter="all">All</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="web">Web</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="mobile">Mobile</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="other">Other</button>
-            </div>
-            <div id="projects-container" class="row">
-                <div class="col-md-6 mb-4 project-item web">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Internship at Mercedes-Benz AG</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sep 2023 - Mar 2024</h6>
-                            <p class="card-text">Automated authorization processes using Cypress, developed a tool for test support in Python, and conducted IT UAT tests on the 'MO360 MES' test environment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 project-item mobile">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">IT Back-Office / Developer at Ecovery GmbH</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sep 2022 - Sep 2023</h6>
-                            <p class="card-text">Collaborated with the IT department to resolve technology issues, managed MS-Office 365, and developed and maintained apps using Flutter, Git, and Dart.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
-            </div>
-        </div>
-    </section>
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
 
-    <section id="skills" class="py-5 reveal">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white">Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4 class="text-white">Programming Languages</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">HTML, Flutter, Git</li>
-                        <li class="list-group-item">C, Java, JavaScript</li>
-                        <li class="list-group-item">Python, TypeScript</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="text-white">Tools</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">Jira, Confluence</li>
-                        <li class="list-group-item">RabbitMQ, RX Portal</li>
-                        <li class="list-group-item">Microsoft Office 365</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-12">
-                    <h4 class="text-white">Languages</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item">Nepali (Native)</li>
-                        <li class="list-group-item">English (C1)</li>
-                        <li class="list-group-item">German (B2)</li>
-                        <li class="list-group-item">Hindi (C1)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-    <section id="education" class="py-5 reveal">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white">Education</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Bachelor in Electrical Engineering and Information Technology</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">2021 - Present</h6>
-                            <p class="card-text">Hochschule Ravensburg Weingarten University of Applied Sciences</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Abitur</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">2017 - Present</h6>
-                            <p class="card-text">Trinity International College, Kathmandu, Nepal</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
 
-    <section id="contact" class="py-5 reveal">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form id="contact-form">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-outline-light">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
+}
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Samman Aryal. All rights reserved.</p>
-    </footer>
+.list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
-</body>
-</html>
+.floating-boxes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.box {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    animation: float 15s infinite;
+}
+
+.box:nth-child(1) { left: 10%; top: 20%; }
+.box:nth-child(2) { left: 30%; top: 40%; animation-delay: 2s; }
+.box:nth-child(3) { left: 50%; top: 60%; animation-delay: 4s; }
+.box:nth-child(4) { left: 70%; top: 80%; animation-delay: 6s; }
+.box:nth-child(5) { left: 90%; top: 10%; animation-delay: 8s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center/cover;
+}
+
+.btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
