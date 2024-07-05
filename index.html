@@ -9,7 +9,7 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#home">Samman Aryal</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,17 +28,25 @@
         </div>
     </nav>
 
+    <div class="floating-boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
     <section id="home" class="vh-100 d-flex align-items-center">
         <div class="container text-center">
-            <h1 class="display-1 mb-3">Samman Aryal</h1>
-            <p class="lead mb-4">Software Engineer | Electrical Engineering Student | Technology Enthusiast</p>
-            <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+            <h1 class="display-1 mb-3 text-white">Samman Aryal</h1>
+            <p class="lead mb-4 text-white">Software Engineer | Electrical Engineering Student | Technology Enthusiast</p>
+            <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
         </div>
     </section>
 
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">About Me</h2>
+            <h2 class="text-center mb-5 text-white">About Me</h2>
             <div class="row">
                 <div class="col-md-6">
                     <img src="https://via.placeholder.com/400" alt="Samman Aryal" class="img-fluid rounded-circle mb-3">
@@ -56,9 +64,9 @@
         </div>
     </section>
 
-    <section id="portfolio" class="py-5 bg-light">
+    <section id="portfolio" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Portfolio</h2>
+            <h2 class="text-center mb-5 text-white">Portfolio</h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card h-100">
@@ -84,10 +92,10 @@
 
     <section id="skills" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Skills</h2>
+            <h2 class="text-center mb-5 text-white">Skills</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Programming Languages</h4>
+                    <h4 class="text-white">Programming Languages</h4>
                     <ul class="list-group">
                         <li class="list-group-item">HTML, Flutter, Git</li>
                         <li class="list-group-item">C, Java, JavaScript</li>
@@ -95,7 +103,7 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <h4>Tools</h4>
+                    <h4 class="text-white">Tools</h4>
                     <ul class="list-group">
                         <li class="list-group-item">Jira, Confluence</li>
                         <li class="list-group-item">RabbitMQ, RX Portal</li>
@@ -105,7 +113,7 @@
             </div>
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <h4>Languages</h4>
+                    <h4 class="text-white">Languages</h4>
                     <ul class="list-group">
                         <li class="list-group-item">Nepali (Native)</li>
                         <li class="list-group-item">English (C1)</li>
@@ -117,9 +125,9 @@
         </div>
     </section>
 
-    <section id="education" class="py-5 bg-light">
+    <section id="education" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Education</h2>
+            <h2 class="text-center mb-5 text-white">Education</h2>
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card h-100">
@@ -145,7 +153,7 @@
 
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Contact Me</h2>
+            <h2 class="text-center mb-5 text-white">Contact Me</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form id="contact-form">
@@ -161,7 +169,7 @@
                             <label for="message" class="form-label">Message</label>
                             <textarea class="form-control" id="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-outline-light">Send Message</button>
                     </form>
                 </div>
             </div>
