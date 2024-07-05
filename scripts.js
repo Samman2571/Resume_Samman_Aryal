@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Smooth scrolling
+    // Smooth scrolling for internal links
     $('a.nav-link, .btn').on('click', function(event) {
         if (this.hash !== "") {
             event.preventDefault();
@@ -141,14 +141,15 @@ $(document).ready(function() {
 
 
 
-   function toggleThesisDetails() {
-    var details = document.getElementById("thesis-details");
-    if (details.style.display === "none") {
-        details.style.display = "block";
-    } else {
-        details.style.display = "none";
+   // Toggle thesis details function
+    function toggleThesisDetails() {
+        var details = document.getElementById("thesis-details");
+        if (details.style.display === "none") {
+            details.style.display = "block";
+        } else {
+            details.style.display = "none";
         }
-   }
+    }
 
     
    // Reveal animations
@@ -184,13 +185,13 @@ $(document).ready(function() {
     animateSkills();
 
     // Smooth scroll for internal links
-    $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
-        if (target.length) {
+      $('a[href^="#"]').on('click', function(event) {
+        var hash = this.hash;
+        if (hash && $(hash).length > 0) { // Ensure the target exists
             event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top - 70
-            }, 1000);
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 56
+            }, 800);
         }
     });
 
