@@ -25,7 +25,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Thesis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li> <!-- Added Education link -->
                 </ul>
@@ -47,35 +47,23 @@
         </div>
     </section>
 
-      <section id="thesis" class="py-5">
+    <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="text-center">Thesis</h2>
+            <h2 class="text-center">Projects</h2>
             <div class="text-center mb-4">
-                <!-- Progress bar indicating work in progress -->
-                <div class="progress" style="height: 20px;">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50% Complete</div>
-                </div>
+                <button class="btn btn-outline-light filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="web">Web</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="mobile">Mobile</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="other">Other</button>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h3>Simulation of 2-Dimensional Heat Conduction using Physics-Informed Neural Networks</h3>
-                    <p>
-                        My thesis involves using PyTorch to simulate heat conduction in a 2-dimensional space. I am implementing Physics-Informed Neural Networks (PINNs) to efficiently model the heat transfer processes. This approach combines the accuracy of physics-based models with the flexibility and scalability of neural networks.
-                    </p>
-                    <button class="btn btn-outline-primary" onclick="toggleThesisDetails()">See Details</button>
-                    <div id="thesis-details" style="display: none;">
-                        <p>
-                            This thesis aims to demonstrate how PINNs can be trained to predict temperature distributions in complex geometries without relying on traditional mesh-based methods. By leveraging PyTorch's computational graph and automatic differentiation capabilities, I am exploring how neural networks can be adapted to enforce physical constraints directly into the learning process.
-                        </p>
-                        <p>
-                            The project involves preprocessing data, designing the neural network architecture, training models on GPU-enabled systems, and validating results against analytical or experimental data. It also includes optimizing hyperparameters to enhance model accuracy and performance.
-                        </p>
-                    </div>
-                </div>
+            <div class="row" id="projects-container">
+                <!-- Project items will be dynamically loaded here -->
+            </div>
+            <div class="text-center">
+                <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
             </div>
         </div>
     </section>
-
 
 <section id="education" class="py-5">
     <div class="container">
