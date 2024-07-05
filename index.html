@@ -160,6 +160,74 @@
         .back-to-top i {
             font-size: 24px;
         }
+
+        /* Typing animation */
+        .typing-animation {
+            font-size: 2em;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 0.15em solid orange;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: orange;
+            }
+        }
+
+        /* Collapsible experience section */
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #333;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .collapsible:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+        .active:after {
+            content: "\2212";
+        }
+
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 
@@ -195,7 +263,7 @@
     <!-- Home Section -->
     <section id="home">
         <div class="container text-center text-white">
-            <h1>Welcome to Your Portfolio</h1>
+            <h1 class="typing-animation">Welcome to Your Portfolio</h1>
             <p>This is where you showcase your skills and projects.</p>
             <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
         </div>
@@ -259,6 +327,25 @@
                     </div>
                 </div>
             </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <button type="button" class="collapsible">Experience 1</button>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
+                            hendrerit, sit amet fringilla odio fermentum.</p>
+                    </div>
+                    <button type="button" class="collapsible">Experience 2</button>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
+                            hendrerit, sit amet fringilla odio fermentum.</p>
+                    </div>
+                    <button type="button" class="collapsible">Experience 3</button>
+                    <div class="content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
+                            hendrerit, sit amet fringilla odio fermentum.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -266,9 +353,9 @@
     <section id="contact">
         <div class="container">
             <h2 class="text-center mb-5">Contact Me</h2>
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
-                    <form id="contact-form">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form>
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                         </div>
@@ -288,7 +375,7 @@
 
     <!-- Dark Mode Toggle Button -->
     <button id="dark-mode-toggle">
-        <i id="dark-mode-icon" class="fas fa-moon"></i> Dark Mode
+        <i id="dark-mode-icon" class="fas fa-moon"></i>
     </button>
 
     <!-- Back to Top Button -->
@@ -411,6 +498,20 @@
             revealElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // Collapsible sections for experience
+            var coll = document.getElementsByClassName("collapsible");
+            for (var i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            }
         });
     </script>
 </body>
