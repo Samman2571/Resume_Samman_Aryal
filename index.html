@@ -227,6 +227,30 @@
             margin-bottom: 20px; /* Add space between items */
         }
     }
+
+
+/* CSS for Education Section */
+
+/* Hover Animation */
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Black and White Filter */
+.card-img-top {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+    filter: grayscale(0%);
+}
+
+
         
         /* Collapsible experience section */
         .collapsible {
@@ -402,6 +426,9 @@
     </div>
 </section>
 
+
+
+    
 <section id="education" style="background-color: #e8f5e9; color: #333;">
     <div class="container">
         <h2 class="text-center mb-5">Education</h2>
@@ -416,10 +443,30 @@
                     </div>
                 </div>
             </div>
-            <!-- Add more education entries if needed -->
+            <div class="col-md-12">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="Hochschule Ravensburg Weingarten" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">Hochschule Ravensburg Weingarten</h5>
+                        <p class="card-text">Bachelor in Electrical Engineering and Information Technology</p>
+                        <p class="card-text">March 2021 - Present</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Trinity.jpg" alt="Trinity International College" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">Trinity International College</h5>
+                        <p class="card-text">Abitur (High School Diploma equivalent)</p>
+                        <p class="card-text">April 2017 - Present</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
 
 
