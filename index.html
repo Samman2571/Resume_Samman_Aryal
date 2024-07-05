@@ -1,37 +1,179 @@
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samman Aryal - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Samman Aryal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <title>Samman's Personal Website</title>
-  </head>
-  <body>
-    <h1>Samman Aryal</h1>
-    <p>
-      <em>Student at <strong> Hochschule Ravensburg Weingarten</strong> </em>
-    </p>
-    <p>I am learning Web Development</p>
-    <hr />
-    <h3>Education Background</h3>
+    <section id="home" class="vh-100 d-flex align-items-center">
+        <div class="container text-center">
+            <h1 class="display-1 mb-3">Samman Aryal</h1>
+            <p class="lead mb-4">Software Engineer | Electrical Engineering Student | Technology Enthusiast</p>
+            <a href="#about" class="btn btn-primary btn-lg">Learn More</a>
+        </div>
+    </section>
 
-    <form action="">
-    <label> Name</label>
-    <input type="password" name="" id="" />
-    <br>
-    <br>
-    <label>email</label>
-    <input type="email" name="" id="">
-    <br>
-    <br>
-    <label for="Submit"></label>
-    <input type="Submit" name="" id="">
-    <label for="Upload your file here:"></label>
-    <input type="file" name="" id="">
-    <br>
-    <br>
-    <label for="Your Message"></label>
-    <textarea name="" id="" cols="30" rows="10"></textarea>
-    <input type="Submit" name="" id="">
-    </form>
-  </body>
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://via.placeholder.com/400" alt="Samman Aryal" class="img-fluid rounded-circle mb-3">
+                </div>
+                <div class="col-md-6">
+                    <p>Born on 25/01/2001, I am a Nepali national currently residing in Weingarten, Germany. I am pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Hochschule Ravensburg Weingarten University of Applied Sciences.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> (+49) 15141369367</li>
+                        <li><i class="fas fa-envelope me-2"></i> sammanaryal100@gmail.com</li>
+                        <li><i class="fab fa-linkedin me-2"></i> <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">Samman Aryal</a></li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Briachstr. 10, 88250, Weingarten, Deutschland</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfolio</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Internship at Mercedes-Benz AG</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sep 2023 - Mar 2024</h6>
+                            <p class="card-text">Automated authorization processes using Cypress, developed a tool for test support in Python, and conducted IT UAT tests on the 'MO360 MES' test environment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Back-Office / Developer at Ecovery GmbH</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Sep 2022 - Sep 2023</h6>
+                            <p class="card-text">Collaborated with the IT department to resolve technology issues, managed MS-Office 365, and developed and maintained apps using Flutter, Git, and Dart.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Programming Languages</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">HTML, Flutter, Git</li>
+                        <li class="list-group-item">C, Java, JavaScript</li>
+                        <li class="list-group-item">Python, TypeScript</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Tools</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">Jira, Confluence</li>
+                        <li class="list-group-item">RabbitMQ, RX Portal</li>
+                        <li class="list-group-item">Microsoft Office 365</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h4>Languages</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">Nepali (Native)</li>
+                        <li class="list-group-item">English (C1)</li>
+                        <li class="list-group-item">German (B2)</li>
+                        <li class="list-group-item">Hindi (C1)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Education</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Bachelor in Electrical Engineering and Information Technology</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">2021 - Present</h6>
+                            <p class="card-text">Hochschule Ravensburg Weingarten University of Applied Sciences</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Abitur</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">2017 - Present</h6>
+                            <p class="card-text">Trinity International College, Kathmandu, Nepal</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form id="contact-form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Samman Aryal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
 </html>
