@@ -127,109 +127,34 @@ section {
     height: 10px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    overflow: hidden;
 }
 
 .skill-progress-bar {
     height: 100%;
     background-color: #fff;
-    width: 0;
+    border-radius: 5px;
     transition: width 1s ease;
 }
 
-.project-image {
-    height: 200px;
-    object-fit: cover;
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
 }
 
-.timeline {
-    position: relative;
-    padding: 0;
-    list-style: none;
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-.timeline:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    margin-left: -1px;
-    background-color: rgba(255, 255, 255, 0.2);
+.dark-mode .navbar {
+    background-color: rgba(18, 18, 18, 0.8) !important;
 }
 
-.timeline > li {
-    position: relative;
-    margin-bottom: 50px;
-}
-
-.timeline > li:after, .timeline > li:before {
-    content: " ";
-    display: table;
-}
-
-.timeline > li:after {
-    clear: both;
-}
-
-.timeline > li .timeline-panel {
-    float: left;
-    position: relative;
-    width: 46%;
-    padding: 20px;
+.dark-mode .card, .dark-mode .list-group-item, .dark-mode .form-control {
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-}
-
-.timeline > li .timeline-panel:before {
-    right: -15px;
-    border-left-width: 15px;
-    border-right-width: 0;
-}
-
-.timeline > li .timeline-panel:after {
-    right: -14px;
-    border-left-width: 14px;
-    border-right-width: 0;
-}
-
-.timeline > li .timeline-image {
-    z-index: 100;
-    position: absolute;
-    left: 50%;
-    width: 80px;
-    height: 80px;
-    margin-left: -40px;
-    background-color: #fff;
-    color: #000;
-    border-radius: 100%;
-    border: 7px solid #e9ecef;
-    text-align: center;
-}
-
-.timeline > li .timeline-image h4 {
-    font-size: 10px;
-    margin-top: 12px;
-    line-height: 14px;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel {
-    float: right;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel:before {
-    left: -15px;
-    border-right-width: 15px;
-    border-left-width: 0;
-}
-
-.timeline > li.timeline-inverted > .timeline-panel:after {
-    left: -14px;
-    border-right-width: 14px;
-    border-left-width: 0;
-}
-
-.text-muted {
-    color: #ccc !important;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
 }
