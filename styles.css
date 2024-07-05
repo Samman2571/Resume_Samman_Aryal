@@ -270,3 +270,116 @@ section {
 .text-muted {
     color: #ccc !important; /* Light gray text color */
 }
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+    margin-top: 50px; /* Adjust spacing */
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: rgba(0, 0, 0, 0.2); /* Light opaque black */
+}
+
+.timeline > ul {
+    padding-left: 0;
+}
+
+.timeline > ul > li {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline > ul > li:after,
+.timeline > ul > li:before {
+    content: " ";
+    display: table;
+}
+
+.timeline > ul > li:after {
+    clear: both;
+}
+
+.timeline > ul > li .timeline-panel {
+    float: left;
+    position: relative;
+    width: 46%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.timeline > ul > li .timeline-panel:before {
+    right: -15px;
+    border-left-width: 15px;
+    border-right-width: 0;
+}
+
+.timeline > ul > li .timeline-panel:after {
+    right: -14px;
+    border-left-width: 14px;
+    border-right-width: 0;
+}
+
+.timeline > ul > li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 100%;
+    border: 7px solid #e9ecef;
+    text-align: center;
+    line-height: 70px; /* Adjust for vertical alignment */
+    font-size: 14px; /* Adjust font size */
+}
+
+.timeline > ul > li .timeline-image h4 {
+    font-size: 12px; /* Adjust font size */
+    margin-top: 12px;
+    line-height: 14px;
+}
+
+.timeline > ul > li.timeline-inverted > .timeline-panel {
+    float: right;
+}
+
+.timeline > ul > li.timeline-inverted > .timeline-panel:before {
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline > ul > li.timeline-inverted > .timeline-panel:after {
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+/* Animation for timeline */
+.timeline-panel {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.timeline-panel.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
