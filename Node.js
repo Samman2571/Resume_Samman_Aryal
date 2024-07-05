@@ -39,13 +39,13 @@ app.post('/send-email', (req, res) => {
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            return console.log(error);
+            console.log(error);
+            res.status(500).send('Error sending email');
+        } else {
+            console.log('Message sent: %s', info.messageId);
+            res.send('Message sent successfully');
         }
-        console.log('Message sent: %s', info.messageId);
     });
-
-    // Response to client
-    res.send('Message sent');
 });
 
 // Start server
