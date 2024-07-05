@@ -1,33 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samman Aryal - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="CSS.css" rel="stylesheet">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="scripts.js"></script>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbar">
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Samman Aryal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+
+    <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <h1 class="text-white">I am <span id="typed-text"></span></h1>
+            <a href="#about" class="btn btn-outline-light mt-4">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <p class="text-muted text-center">I am a passionate software engineer and an electrical engineering student.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Projects</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-light filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="web">Web</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="mobile">Mobile</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="row" id="projects-container">
+                <!-- Project items will be dynamically loaded here -->
+            </div>
+            <div class="text-center">
+                <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <div class="floating-boxes">
         <div class="box"></div>
@@ -37,220 +90,8 @@
         <div class="box"></div>
     </div>
 
-    <section id="home" class="vh-100 d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-1 mb-3 text-white reveal">Samman Aryal</h1>
-            <p class="lead mb-4 text-white reveal">I am a <span id="typed-text"></span></p>
-            <p class="lead mb-4 text-white reveal">Welcome to my personal portfolio website. Here, you will find information about my skills, experience, and projects I have worked on.</p>
-            <a href="#about" class="btn btn-outline-light btn-lg reveal">Learn More</a>
-        </div>
-    </section>
-
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white reveal">About Me</h2>
-            <div class="row">
-                <div class="col-md-6 reveal">
-                    <img src="https://via.placeholder.com/400" alt="Samman Aryal" class="img-fluid rounded-circle mb-3">
-                </div>
-                <div class="col-md-6 reveal">
-                    <p>Born on 25/01/2001, I am a Nepali national currently residing in Weingarten, Germany. I am pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Hochschule Ravensburg Weingarten University of Applied Sciences.</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone me-2"></i> (+49) 15141369367</li>
-                        <li><i class="fas fa-envelope me-2"></i> sammanaryal100@gmail.com</li>
-                        <li><i class="fab fa-linkedin me-2"></i> <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">Samman Aryal</a></li>
-                        <li><i class="fas fa-map-marker-alt me-2"></i> Briachstr. 10, 88250, Weingarten, Deutschland</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white reveal">Portfolio</h2>
-            <div class="text-center mb-4 reveal">
-                <button class="btn btn-outline-light filter-btn active" data-filter="all">All</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="web">Web</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="mobile">Mobile</button>
-                <button class="btn btn-outline-light filter-btn" data-filter="other">Other</button>
-            </div>
-            <div id="projects-container" class="row">
-                <div class="col-md-6 mb-4 project-item web reveal">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x200" class="card-img-top project-image" alt="Project 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Internship at Mercedes-Benz AG</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sep 2023 - Mar 2024</h6>
-                            <p class="card-text">Automated authorization processes using Cypress, developed a tool for test support in Python, and conducted IT UAT tests on the 'MO360 MES' test environment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 project-item mobile reveal">
-                    <div class="card h-100">
-                        <img src="https://via.placeholder.com/400x200" class="card-img-top project-image" alt="Project 2">
-                        <div class="card-body">
-                            <h5 class="card-title">IT Back-Office / Developer at Ecovery GmbH</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Sep 2022 - Sep 2023</h6>
-                            <p class="card-text">Collaborated with the IT department to resolve technology issues, managed MS-Office 365, and developed and maintained apps using Flutter, Git, and Dart.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-4 reveal">
-                <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white reveal">Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h4 class="text-white reveal">Programming Languages</h4>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">HTML/CSS</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="90"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">JavaScript</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Python</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="80"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Java</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="75"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <h4 class="text-white reveal">Tools & Technologies</h4>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Git</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="85"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Flutter</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="75"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Jira</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="80"></div>
-                        </div>
-                    </div>
-                    <div class="mb-3 reveal">
-                        <p class="mb-1">Microsoft Office 365</p>
-                        <div class="skill-progress">
-                            <div class="skill-progress-bar" data-width="90"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-12">
-                    <h4 class="text-white reveal">Languages</h4>
-                    <ul class="list-group reveal">
-                        <li class="list-group-item">Nepali (Native)</li>
-                        <li class="list-group-item">English (C1)</li>
-                        <li class="list-group-item">German (B2)</li>
-                        <li class="list-group-item">Hindi (C1)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white reveal">Education</h2>
-            <ul class="timeline">
-                <li>
-                    <div class="timeline-image">
-                        <h4>2021<br>-<br>Present</h4>
-                    </div>
-                    <div class="timeline-panel reveal">
-                        <div class="timeline-heading">
-                            <h4>Bachelor in Electrical Engineering and Information Technology</h4>
-                            <h4 class="subheading">Hochschule Ravensburg Weingarten University of Applied Sciences</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Studying advanced concepts in electrical engineering and information technology.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-image">
-                        <h4>2017<br>-<br>2021</h4>
-                    </div>
-                    <div class="timeline-panel reveal">
-                        <div class="timeline-heading">
-                            <h4>Abitur</h4>
-                            <h4 class="subheading">Trinity International College, Kathmandu, Nepal</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p class="text-muted">Completed secondary education with a focus on science and mathematics.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="contact" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 text-white reveal">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <form id="contact-form" class="reveal">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-outline-light">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 Samman Aryal. All rights reserved.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
-    <script>
-        var typed = new Typed('#typed-text', {
-            strings: ["Developer", "Engineer", "Learner"],
-            typeSpeed: 50,
-            backSpeed: 25,
-            loop: true
-        });
-    </script>
+    <button id="dark-mode-toggle" class="btn btn-outline-light position-fixed" style="bottom: 20px; right: 20px;">Dark Mode</button>
 </body>
+
 </html>
+
