@@ -1,0 +1,39 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 56px;
+}
+
+#home {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+    color: white;
+}
+
+.navbar {
+    transition: all 0.4s;
+}
+
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.list-group-item {
+    transition: background-color 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
