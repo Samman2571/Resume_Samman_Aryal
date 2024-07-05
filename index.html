@@ -207,6 +207,26 @@
       .circular-frame:hover img {
       transform: scale(1.1); /* Zoom effect on hover (adjust the scale factor as needed) */
    }
+
+
+            /* Ensure images are rounded */
+    .card-img-top {
+        border-radius: 50%;
+    }
+
+    /* Styling for the hover effect */
+    .card:hover .card-img-top {
+        transform: scale(1.1); /* Increase size by 10% */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .project-item {
+            flex-basis: 100%; /* Full width on small screens */
+            margin-bottom: 20px; /* Add space between items */
+        }
+    }
         
         /* Collapsible experience section */
         .collapsible {
