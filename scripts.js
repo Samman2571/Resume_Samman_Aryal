@@ -139,6 +139,18 @@ $(document).ready(function() {
         });
     });
 
+
+
+   function toggleThesisDetails() {
+    var details = document.getElementById("thesis-details");
+    if (details.style.display === "none") {
+        details.style.display = "block";
+    } else {
+        details.style.display = "none";
+        }
+   }
+
+    
    // Reveal animations
     function reveal() {
         var reveals = document.querySelectorAll(".reveal, .timeline-panel");
