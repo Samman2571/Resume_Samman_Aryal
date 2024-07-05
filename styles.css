@@ -1,8 +1,26 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
-    color: #fff;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text color */
     padding-top: 56px;
+}
+
+a {
+    color: #800080; /* Purple link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #4b004e; /* Darker purple on hover */
 }
 
 .navbar {
@@ -12,13 +30,18 @@ body {
 
 .navbar-scrolled {
     background-color: rgba(0, 0, 0, 0.9) !important;
-    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand, .nav-link {
-    color: #fff !important;
+    color: #fff !important; /* White text color for navbar links */
 }
 
+.navbar-brand:hover, .nav-link:hover {
+    color: #f0f0f0 !important; /* Lighter text color on hover */
+}
+
+/* Section styles */
 section {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -26,33 +49,36 @@ section {
     z-index: 1;
 }
 
+/* Card styles */
 .card {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
-    color: #fff;
+    color: #000; /* Black text color */
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Dark shadow on hover */
 }
 
 .card-title, .card-subtitle, .card-text {
-    color: #fff;
+    color: #000; /* Black text color for card content */
 }
 
+/* List group item styles */
 .list-group-item {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+    color: #000; /* Black text color */
+    border-color: rgba(255, 255, 255, 0.9);
     transition: background-color 0.3s;
 }
 
 .list-group-item:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.95); /* Lighter background on hover */
 }
 
+/* Floating boxes animation */
 .floating-boxes {
     position: fixed;
     top: 0;
@@ -67,7 +93,7 @@ section {
     position: absolute;
     width: 60px;
     height: 60px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1); /* Light opaque white */
     animation: float 15s infinite;
 }
 
@@ -82,6 +108,7 @@ section {
     50% { transform: translateY(-20px) rotate(180deg); }
 }
 
+/* Home section background */
 #home {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center/cover;
     height: 100vh;
@@ -90,28 +117,35 @@ section {
     justify-content: center;
 }
 
-.btn-outline-light:hover {
-    background-color: #fff;
-    color: #000;
+/* Button styles */
+.btn-outline-light {
+    color: #fff; /* White text color */
+    border-color: #fff; /* White border color */
 }
 
+.btn-outline-light:hover {
+    background-color: #fff; /* White background on hover */
+    color: #800080; /* Purple text color on hover */
+}
+
+/* Form control styles */
 .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+    border-color: rgba(255, 255, 255, 0.9); /* Light border color */
+    color: #000; /* Black text color */
 }
 
 .form-control:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: #fff;
-    box-shadow: none;
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque white background on focus */
+    border-color: rgba(255, 255, 255, 0.9); /* Lighter border color on focus */
+    color: #000; /* Black text color on focus */
 }
 
 .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5); /* Semi-transparent placeholder text color */
 }
 
+/* Reveal animation */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -123,38 +157,116 @@ section {
     transform: translateY(0);
 }
 
+/* Skill progress bar */
 .skill-progress {
     height: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1); /* Light opaque black background */
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .skill-progress-bar {
     height: 100%;
-    background-color: #fff;
-    border-radius: 5px;
+    background-color: #800080; /* Purple progress bar color */
+    width: 0;
     transition: width 1s ease;
 }
 
-.back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
+/* Project image */
+.project-image {
+    height: 200px;
+    object-fit: cover;
 }
 
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+/* Timeline styles */
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
 }
 
-.dark-mode .navbar {
-    background-color: rgba(18, 18, 18, 0.8) !important;
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: rgba(0, 0, 0, 0.2); /* Light opaque black */
 }
 
-.dark-mode .card, .dark-mode .list-group-item, .dark-mode .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
+.timeline > li {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline > li:after, .timeline > li:before {
+    content: " ";
+    display: table;
+}
+
+.timeline > li:after {
+    clear: both;
+}
+
+.timeline > li .timeline-panel {
+    float: left;
+    position: relative;
+    width: 46%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+    border-radius: 8px;
+}
+
+.timeline > li .timeline-panel:before {
+    right: -15px;
+    border-left-width: 15px;
+    border-right-width: 0;
+}
+
+.timeline > li .timeline-panel:after {
+    right: -14px;
+    border-left-width: 14px;
+    border-right-width: 0;
+}
+
+.timeline > li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 100%;
+    border: 7px solid #e9ecef;
+    text-align: center;
+}
+
+.timeline > li .timeline-image h4 {
+    font-size: 10px;
+    margin-top: 12px;
+    line-height: 14px;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    left: -15px;
+    border-right-width: 15px;
+    border-left-width: 0;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+    left: -14px;
+    border-right-width: 14px;
+    border-left-width: 0;
+}
+
+.text-muted {
+    color: #ccc !important; /* Light gray text color */
 }
