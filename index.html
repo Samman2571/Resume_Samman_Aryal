@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <!-- Bootstrap CSS -->
+    <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- Custom CSS -->
     <style>
         /* Reset default margin and padding */
         * {
@@ -20,37 +17,43 @@
         /* Global styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa; /* Light gray background */
-            color: #343a40; /* Dark gray text color */
+            background-color: #fff; /* White background */
+            color: #000; /* Black text color */
             padding-top: 56px;
+            position: relative;
         }
 
         a {
-            color: #6610f2; /* Purple link color */
+            color: #800080; /* Purple link color */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #4a0e9e; /* Darker purple on hover */
+            color: #4b004e; /* Darker purple on hover */
         }
 
-        /* Navbar styles */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.8) !important; /* Dark background for navbar */
+            background-color: rgba(0, 0, 0, 0.8) !important;
             transition: all 0.4s;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         .navbar-scrolled {
-            background-color: rgba(0, 0, 0, 0.9) !important; /* Slightly darker background on scroll */
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Shadow on scroll */
+            background-color: rgba(0, 0, 0, 0.9) !important;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .navbar-brand, .nav-link {
+        .navbar-brand,
+        .nav-link {
             color: #fff !important; /* White text color for navbar links */
         }
 
-        .navbar-brand:hover, .nav-link:hover {
+        .navbar-brand:hover,
+        .nav-link:hover {
             color: #f0f0f0 !important; /* Lighter text color on hover */
         }
 
@@ -60,12 +63,11 @@
             padding-bottom: 100px;
             position: relative;
             z-index: 1;
-            text-align: center; /* Center-align content */
         }
 
         /* Card styles */
         .card {
-            background-color: #fff; /* White background for cards */
+            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
             border: none;
             transition: transform 0.3s, box-shadow 0.3s;
             color: #000; /* Black text color */
@@ -73,11 +75,168 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Dark shadow on hover */
         }
 
-        .card-title, .card-subtitle, .card-text {
+        .card-title,
+        .card-subtitle,
+        .card-text {
             color: #000; /* Black text color for card content */
+        }
+
+        /* Button styles */
+        .btn-outline-light {
+            color: #fff; /* White text color */
+            border-color: #fff; /* White border color */
+        }
+
+        .btn-outline-light:hover {
+            background-color: #fff; /* White background on hover */
+            color: #800080; /* Purple text color on hover */
+        }
+
+        /* Form control styles */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+            border-color: rgba(255, 255, 255, 0.9); /* Light border color */
+            color: #000; /* Black text color */
+        }
+
+        .form-control:focus {
+            background-color: rgba(255, 255, 255, 1); /* Fully opaque white background on focus */
+            border-color: rgba(255, 255, 255, 0.9); /* Lighter border color on focus */
+            color: #000; /* Black text color on focus */
+        }
+
+        .form-control::placeholder {
+            color: rgba(0, 0, 0, 0.5); /* Semi-transparent placeholder text color */
+        }
+
+        /* Reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Skill progress bar */
+        .skill-progress {
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.1); /* Light opaque black background */
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background-color: #800080; /* Purple progress bar color */
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        /* Project image */
+        .project-image {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            margin-left: -1px;
+            background-color: rgba(0, 0, 0, 0.2); /* Light opaque black */
+        }
+
+        .timeline > li {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline > li:after,
+        .timeline > li:before {
+            content: " ";
+            display: table;
+        }
+
+        .timeline > li:after {
+            clear: both;
+        }
+
+        .timeline > li .timeline-panel {
+            float: left;
+            position: relative;
+            width: 46%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+            border-radius: 8px;
+        }
+
+        .timeline > li .timeline-panel:before {
+            right: -15px;
+            border-left-width: 15px;
+            border-right-width: 0;
+        }
+
+        .timeline > li .timeline-panel:after {
+            right: -14px;
+            border-left-width: 14px;
+            border-right-width: 0;
+        }
+
+        .timeline > li .timeline-image {
+            z-index: 100;
+            position: absolute;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            margin-left: -40px;
+            background-color: #fff;
+            color: #000;
+            border-radius: 100%;
+            border: 7px solid #e9ecef;
+            text-align: center;
+        }
+
+        .timeline > li .timeline-image h4 {
+            font-size: 10px;
+            margin-top: 12px;
+            line-height: 14px;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            left: -15px;
+            border-right-width: 15px;
+            border-left-width: 0;
+        }
+
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            left: -14px;
+            border-right-width: 14px;
+            border-left-width: 0;
+        }
+
+        .text-muted {
+            color: #ccc !important; /* Light gray text color */
         }
 
         /* Floating boxes animation */
@@ -117,67 +276,53 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center; /* Center-align content */
+            position: relative;
         }
 
-        /* Button styles */
-        .btn-outline-light {
-            color: #fff; /* White text color */
-            border-color: #fff; /* White border color */
+        /* Dark mode toggle */
+        #dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
         }
 
-        .btn-outline-light:hover {
-            background-color: #fff; /* White background on hover */
-            color: #6610f2; /* Purple text color on hover */
+        /* Dark mode icon */
+        #dark-mode-icon {
+            font-size: 24px;
+            margin-right: 8px;
         }
 
-        /* Reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+        /* Smooth scroll back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .back-to-top i {
+            font-size: 24px;
         }
 
-        /* Dark mode */
-        body.dark-mode {
-            background-color: #333;
-            color: #fff; /* White text color */
-        }
-
-        body.dark-mode a {
-            color: #ff69b4; /* Pink link color in dark mode */
-        }
-
-        body.dark-mode .navbar {
-            background-color: rgba(0, 0, 0, 0.8) !important; /* Dark background for navbar in dark mode */
-        }
-
-        body.dark-mode .navbar-brand, body.dark-mode .nav-link {
-            color: #fff !important; /* White text color for navbar links in dark mode */
-        }
-
-        body.dark-mode .navbar-brand:hover, body.dark-mode .nav-link:hover {
-            color: #f0f0f0 !important; /* Lighter text color on hover in dark mode */
-        }
-
-        body.dark-mode .card {
-            background-color: rgba(0, 0, 0, 0.8); /* Dark opaque background for cards in dark mode */
-            color: #fff; /* White text color */
-        }
-
-        body.dark-mode .card-title, body.dark-mode .card-subtitle, body.dark-mode .card-text {
-            color: #fff; /* White text color for card content in dark mode */
-        }
     </style>
 </head>
+
 <body>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">Your Name</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -196,13 +341,7 @@
                         <a class="nav-link" href="#projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#timeline">Timeline</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="dark-mode-toggle" class="btn btn-outline-light">Dark Mode</button>
                     </li>
                 </ul>
             </div>
@@ -212,8 +351,9 @@
     <!-- Home Section -->
     <section id="home">
         <div class="container text-center text-white">
-            <h1>Welcome to My Portfolio</h1>
-            <p>I am a <span id="typed-text"></span></p>
+            <h1>Welcome to Your Portfolio</h1>
+            <p>This is where you showcase your skills and projects.</p>
+            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
         </div>
     </section>
 
@@ -221,9 +361,22 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-lg-6">
                     <h2>About Me</h2>
-                    <p>Your introduction and details about yourself.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero et felis
+                        hendrerit, sit amet fringilla odio fermentum. Duis quis ullamcorper dui.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Skills</h2>
+                    <div class="skill-progress mb-4">
+                        <div class="skill-progress-bar" style="width: 90%;" data-width="90"></div>
+                    </div>
+                    <div class="skill-progress mb-4">
+                        <div class="skill-progress-bar" style="width: 80%;" data-width="80"></div>
+                    </div>
+                    <div class="skill-progress mb-4">
+                        <div class="skill-progress-bar" style="width: 70%;" data-width="70"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -232,36 +385,32 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="text-center mb-4">Projects</h2>
-            <div class="row" id="projects-container">
-                <!-- Projects will be dynamically loaded here -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+            <h2 class="text-center mb-5">Projects</h2>
+            <div class="row">
+                <div class="col-md-4 project-item reveal">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 1">
                         <div class="card-body">
                             <h5 class="card-title">Project 1</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
-                            <p class="card-text">Description of Project 1.</p>
-                            <a href="#" class="card-link">View details</a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4 project-item reveal">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 2">
                         <div class="card-body">
                             <h5 class="card-title">Project 2</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
-                            <p class="card-text">Description of Project 2.</p>
-                            <a href="#" class="card-link">View details</a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
+                <div class="col-md-4 project-item reveal">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/300" class="card-img-top project-image" alt="Project 3">
                         <div class="card-body">
                             <h5 class="card-title">Project 3</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
-                            <p class="card-text">Description of Project 3.</p>
-                            <a href="#" class="card-link">View details</a>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
                 </div>
@@ -269,46 +418,12 @@
         </div>
     </section>
 
-    <!-- Timeline Section -->
-    <section id="timeline">
-        <div class="container">
-            <h2 class="text-center mb-4">Timeline</h2>
-            <ul class="timeline">
-                <!-- Timeline events will be dynamically loaded here -->
-                <li>
-                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Graduation</h4>
-                            <p><small class="text-muted"><i class="far fa-clock"></i> Year</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Description of graduation event.</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Job Title</h4>
-                            <p><small class="text-muted"><i class="far fa-clock"></i> Year</small></p>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Description of job role.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Me</h2>
+            <h2 class="text-center mb-5">Contact Me</h2>
             <div class="row">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-lg-6 mx-auto">
                     <form id="contact-form">
                         <div class="form-group">
                             <input type="text" class="form-control" id="name" placeholder="Your Name" required>
@@ -317,16 +432,17 @@
                             <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message"
+                                required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-outline-light btn-block">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating boxes animation -->
+    <!-- Floating Boxes Animation -->
     <div class="floating-boxes">
         <div class="box"></div>
         <div class="box"></div>
@@ -335,15 +451,26 @@
         <div class="box"></div>
     </div>
 
+    <!-- Dark Mode Toggle Button -->
+    <button id="dark-mode-toggle" class="btn btn-primary">
+        <i id="dark-mode-icon" class="fa fa-moon-o"></i> Dark Mode
+    </button>
+
+    <!-- Back to Top Button -->
+    <button class="btn btn-primary back-to-top" id="back-to-top-btn">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Smooth scrolling
-            $('a.nav-link, .btn').on('click', function(event) {
+            $('a.nav-link').on('click', function (event) {
                 if (this.hash !== "") {
                     event.preventDefault();
                     var hash = this.hash;
@@ -354,12 +481,20 @@
             });
 
             // Navbar color change on scroll
-            $(window).scroll(function() {
+            $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
                     $('.navbar').addClass('navbar-scrolled');
                 } else {
                     $('.navbar').removeClass('navbar-scrolled');
                 }
+            });
+
+            // Dark mode toggle
+            $('#dark-mode-toggle').on('click', function () {
+                $('body').toggleClass('dark-mode');
+                var isDarkMode = $('body').hasClass('dark-mode');
+                $('#dark-mode-icon').toggleClass('fa-moon-o fa-sun-o');
+                $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
             });
 
             // Typing effect for home section
@@ -370,39 +505,72 @@
                 loop: true
             });
 
-            // Dark mode toggle
-            $('#dark-mode-toggle').on('click', function() {
-                $('body').toggleClass('dark-mode');
-                var isDarkMode = $('body').hasClass('dark-mode');
-                $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
+            // Lazy loading images
+            const images = document.querySelectorAll('[data-src]');
+            const config = {
+                rootMargin: '0px 0px 50px 0px',
+                threshold: 0
+            };
+
+            let observer = new IntersectionObserver(function (entries, self) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        preloadImage(entry.target);
+                        self.unobserve(entry.target);
+                    }
+                });
+            }, config);
+
+            images.forEach(image => {
+                observer.observe(image);
             });
 
-            // Initialize tooltips
-            $('[data-toggle="tooltip"]').tooltip();
+            function preloadImage(img) {
+                const src = img.getAttribute('data-src');
+                if (!src) {
+                    return;
+                }
 
-            // Floating boxes animation
-            var boxes = document.querySelectorAll('.box');
-            boxes.forEach(function(box) {
-                var delay = Math.random() * 10;
-                box.style.animationDelay = delay + 's';
+                img.src = src;
+            }
+
+            // Back to top button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
             });
 
-            // Form submission
-            $('#contact-form').submit(function(e) {
-                e.preventDefault();
-                var name = $('#name').val();
-                var email = $('#email').val();
-                var message = $('#message').val();
-                // You can add your form handling logic here
-                // For demonstration purposes, we'll just log the values to console
-                console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-                // Clear form fields
-                $('#name').val('');
-                $('#email').val('');
-                $('#message').val('');
-                alert('Message sent successfully!');
+            $('#back-to-top-btn').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
             });
+
+            // Text reveal animation on scroll
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const observerOptions = {
+                rootMargin: '0px',
+                threshold: 0.3
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+
         });
     </script>
 </body>
+
 </html>
