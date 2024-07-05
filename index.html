@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Portfolio</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Custom CSS -->
     <style>
         /* Reset default margin and padding */
         * {
@@ -17,29 +20,30 @@
         /* Global styles */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #fff; /* White background */
-            color: #000; /* Black text color */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #343a40; /* Dark gray text color */
             padding-top: 56px;
         }
 
         a {
-            color: #800080; /* Purple link color */
+            color: #6610f2; /* Purple link color */
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: #4b004e; /* Darker purple on hover */
+            color: #4a0e9e; /* Darker purple on hover */
         }
 
+        /* Navbar styles */
         .navbar {
-            background-color: rgba(0, 0, 0, 0.8) !important;
+            background-color: rgba(0, 0, 0, 0.8) !important; /* Dark background for navbar */
             transition: all 0.4s;
         }
 
         .navbar-scrolled {
-            background-color: rgba(0, 0, 0, 0.9) !important;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.9) !important; /* Slightly darker background on scroll */
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Shadow on scroll */
         }
 
         .navbar-brand, .nav-link {
@@ -61,7 +65,7 @@
 
         /* Card styles */
         .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
+            background-color: #fff; /* White background for cards */
             border: none;
             transition: transform 0.3s, box-shadow 0.3s;
             color: #000; /* Black text color */
@@ -69,7 +73,7 @@
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Dark shadow on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
         }
 
         .card-title, .card-subtitle, .card-text {
@@ -124,7 +128,7 @@
 
         .btn-outline-light:hover {
             background-color: #fff; /* White background on hover */
-            color: #800080; /* Purple text color on hover */
+            color: #6610f2; /* Purple text color on hover */
         }
 
         /* Reveal animation */
@@ -142,7 +146,7 @@
         /* Dark mode */
         body.dark-mode {
             background-color: #333;
-            color: #fff;
+            color: #fff; /* White text color */
         }
 
         body.dark-mode a {
@@ -150,24 +154,24 @@
         }
 
         body.dark-mode .navbar {
-            background-color: rgba(0, 0, 0, 0.8) !important;
+            background-color: rgba(0, 0, 0, 0.8) !important; /* Dark background for navbar in dark mode */
         }
 
         body.dark-mode .navbar-brand, body.dark-mode .nav-link {
-            color: #fff !important; /* White text color for navbar links */
+            color: #fff !important; /* White text color for navbar links in dark mode */
         }
 
         body.dark-mode .navbar-brand:hover, body.dark-mode .nav-link:hover {
-            color: #f0f0f0 !important; /* Lighter text color on hover */
+            color: #f0f0f0 !important; /* Lighter text color on hover in dark mode */
         }
 
         body.dark-mode .card {
-            background-color: rgba(0, 0, 0, 0.8); /* Dark opaque background for cards */
+            background-color: rgba(0, 0, 0, 0.8); /* Dark opaque background for cards in dark mode */
             color: #fff; /* White text color */
         }
 
         body.dark-mode .card-title, body.dark-mode .card-subtitle, body.dark-mode .card-text {
-            color: #fff; /* White text color for card content */
+            color: #fff; /* White text color for card content in dark mode */
         }
     </style>
 </head>
@@ -231,9 +235,36 @@
             <h2 class="text-center mb-4">Projects</h2>
             <div class="row" id="projects-container">
                 <!-- Projects will be dynamically loaded here -->
-            </div>
-            <div class="text-center mt-4">
-                <button id="load-more-projects" class="btn btn-primary">Load More</button>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
+                            <p class="card-text">Description of Project 1.</p>
+                            <a href="#" class="card-link">View details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
+                            <p class="card-text">Description of Project 2.</p>
+                            <a href="#" class="card-link">View details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Category</h6>
+                            <p class="card-text">Description of Project 3.</p>
+                            <a href="#" class="card-link">View details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -243,7 +274,31 @@
         <div class="container">
             <h2 class="text-center mb-4">Timeline</h2>
             <ul class="timeline">
-                <!-- Timeline items will be dynamically loaded here -->
+                <!-- Timeline events will be dynamically loaded here -->
+                <li>
+                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Graduation</h4>
+                            <p><small class="text-muted"><i class="far fa-clock"></i> Year</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Description of graduation event.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Job Title</h4>
+                            <p><small class="text-muted"><i class="far fa-clock"></i> Year</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Description of job role.</p>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
     </section>
@@ -252,18 +307,22 @@
     <section id="contact">
         <div class="container">
             <h2 class="text-center mb-4">Contact Me</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
@@ -276,6 +335,7 @@
         <div class="box"></div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -325,6 +385,22 @@
             boxes.forEach(function(box) {
                 var delay = Math.random() * 10;
                 box.style.animationDelay = delay + 's';
+            });
+
+            // Form submission
+            $('#contact-form').submit(function(e) {
+                e.preventDefault();
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var message = $('#message').val();
+                // You can add your form handling logic here
+                // For demonstration purposes, we'll just log the values to console
+                console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+                // Clear form fields
+                $('#name').val('');
+                $('#email').val('');
+                $('#message').val('');
+                alert('Message sent successfully!');
             });
         });
     </script>
