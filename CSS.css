@@ -11,13 +11,12 @@ body {
 }
 
 .navbar-scrolled {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.1);
 }
 
-.navbar-scrolled .navbar-brand,
-.navbar-scrolled .nav-link {
-    color: #000 !important;
+.navbar-brand, .nav-link {
+    color: #fff !important;
 }
 
 section {
@@ -31,11 +30,16 @@ section {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     transition: transform 0.3s, box-shadow 0.3s;
+    color: #fff;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.card-title, .card-subtitle, .card-text {
+    color: #fff;
 }
 
 .list-group-item {
@@ -224,4 +228,8 @@ section {
     left: -14px;
     border-right-width: 14px;
     border-left-width: 0;
+}
+
+.text-muted {
+    color: #ccc !important;
 }
