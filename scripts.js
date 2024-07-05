@@ -166,6 +166,26 @@ $(document).ready(function() {
         );
     }
 
+   
+    // Dark mode toggle
+    $('#dark-mode-toggle').on('click', function() {
+        $('body').toggleClass('dark-mode');
+        var isDarkMode = $('body').hasClass('dark-mode');
+        $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
+    });
+
+    // New code for View More/Less functionality in About Me section
+    $('#view-more-btn').on('click', function() {
+        $('#quick-info').hide();
+        $('#full-info').show();
+    });
+
+    $('#view-less-btn').on('click', function() {
+        $('#full-info').hide();
+        $('#quick-info').show();
+    });
+});
+
     // Call functions on page load
     animateTimelinePanels();
     window.addEventListener("scroll", animateTimelinePanels);
