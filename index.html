@@ -6,117 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Reset default margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Global styles */
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #fff; /* White background */
-            color: #000; /* Black text color */
-            padding-top: 56px;
-            position: relative;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        a {
-            color: #800080; /* Purple link color */
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #4b004e; /* Darker purple on hover */
+        /* Dark mode styling */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
         }
 
         .navbar {
-            background-color: rgba(0, 0, 0, 0.8) !important;
-            transition: all 0.4s;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
+            background-color: #333;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a {
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #f0f0f0;
         }
 
         .navbar-scrolled {
-            background-color: rgba(0, 0, 0, 0.9) !important;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            background-color: #000;
         }
 
-        .navbar-brand,
-        .nav-link {
-            color: #fff !important; /* White text color for navbar links */
+        #home {
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
         }
 
-        .navbar-brand:hover,
-        .nav-link:hover {
-            color: #f0f0f0 !important; /* Lighter text color on hover */
+        #about,
+        #projects,
+        #contact {
+            padding: 50px 0;
         }
 
-        /* Section styles */
-        section {
-            padding-top: 100px;
-            padding-bottom: 100px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Card styles */
-        .card {
-            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
-            border: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-            color: #000; /* Black text color */
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Dark shadow on hover */
-        }
-
-        .card-title,
-        .card-subtitle,
-        .card-text {
-            color: #000; /* Black text color for card content */
-        }
-
-        /* Button styles */
         .btn-outline-light {
-            color: #fff; /* White text color */
-            border-color: #fff; /* White border color */
+            color: #fff;
+            border-color: #fff;
         }
 
         .btn-outline-light:hover {
-            background-color: #fff; /* White background on hover */
-            color: #800080; /* Purple text color on hover */
+            background-color: #fff;
+            color: #000;
         }
 
-        /* Form control styles */
-        .form-control {
-            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
-            border-color: rgba(255, 255, 255, 0.9); /* Light border color */
-            color: #000; /* Black text color */
+        .skill-progress {
+            background-color: #e0e0e0;
+            border-radius: 25px;
         }
 
-        .form-control:focus {
-            background-color: rgba(255, 255, 255, 1); /* Fully opaque white background on focus */
-            border-color: rgba(255, 255, 255, 0.9); /* Lighter border color on focus */
-            color: #000; /* Black text color on focus */
-        }
-
-        .form-control::placeholder {
-            color: rgba(0, 0, 0, 0.5); /* Semi-transparent placeholder text color */
+        .skill-progress-bar {
+            height: 20px;
+            background-color: #333;
+            border-radius: 25px;
+            line-height: 20px;
+            color: #fff;
+            text-align: center;
         }
 
         /* Reveal animation */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
         }
 
         .reveal.active {
@@ -124,122 +90,7 @@
             transform: translateY(0);
         }
 
-        /* Skill progress bar */
-        .skill-progress {
-            height: 10px;
-            background-color: rgba(0, 0, 0, 0.1); /* Light opaque black background */
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .skill-progress-bar {
-            height: 100%;
-            background-color: #800080; /* Purple progress bar color */
-            width: 0;
-            transition: width 1s ease;
-        }
-
-        /* Project image */
-        .project-image {
-            height: 200px;
-            object-fit: cover;
-        }
-
-        /* Timeline styles */
-        .timeline {
-            position: relative;
-            padding: 0;
-            list-style: none;
-        }
-
-        .timeline:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 2px;
-            margin-left: -1px;
-            background-color: rgba(0, 0, 0, 0.2); /* Light opaque black */
-        }
-
-        .timeline > li {
-            position: relative;
-            margin-bottom: 50px;
-        }
-
-        .timeline > li:after,
-        .timeline > li:before {
-            content: " ";
-            display: table;
-        }
-
-        .timeline > li:after {
-            clear: both;
-        }
-
-        .timeline > li .timeline-panel {
-            float: left;
-            position: relative;
-            width: 46%;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9); /* Light opaque white background */
-            border-radius: 8px;
-        }
-
-        .timeline > li .timeline-panel:before {
-            right: -15px;
-            border-left-width: 15px;
-            border-right-width: 0;
-        }
-
-        .timeline > li .timeline-panel:after {
-            right: -14px;
-            border-left-width: 14px;
-            border-right-width: 0;
-        }
-
-        .timeline > li .timeline-image {
-            z-index: 100;
-            position: absolute;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            margin-left: -40px;
-            background-color: #fff;
-            color: #000;
-            border-radius: 100%;
-            border: 7px solid #e9ecef;
-            text-align: center;
-        }
-
-        .timeline > li .timeline-image h4 {
-            font-size: 10px;
-            margin-top: 12px;
-            line-height: 14px;
-        }
-
-        .timeline > li.timeline-inverted > .timeline-panel {
-            float: right;
-        }
-
-        .timeline > li.timeline-inverted > .timeline-panel:before {
-            left: -15px;
-            border-right-width: 15px;
-            border-left-width: 0;
-        }
-
-        .timeline > li.timeline-inverted > .timeline-panel:after {
-            left: -14px;
-            border-right-width: 14px;
-            border-left-width: 0;
-        }
-
-        .text-muted {
-            color: #ccc !important; /* Light gray text color */
-        }
-
-        /* Floating boxes animation */
+        /* Floating boxes */
         .floating-boxes {
             position: fixed;
             top: 0;
@@ -247,42 +98,36 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 0;
+            z-index: -1;
         }
 
-        .box {
+        .floating-boxes .box {
             position: absolute;
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 255, 255, 0.1); /* Light opaque white */
-            animation: float 15s infinite;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            animation: float 10s infinite;
+            border-radius: 10%;
         }
-
-        .box:nth-child(1) { left: 10%; top: 20%; }
-        .box:nth-child(2) { left: 30%; top: 40%; animation-delay: 2s; }
-        .box:nth-child(3) { left: 50%; top: 60%; animation-delay: 4s; }
-        .box:nth-child(4) { left: 70%; top: 80%; animation-delay: 6s; }
-        .box:nth-child(5) { left: 90%; top: 10%; animation-delay: 8s; }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-100px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
 
-        /* Home section background */
-        #home {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?technology') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        /* Dark mode toggle */
+        /* Dark mode toggle button */
         #dark-mode-toggle {
             position: fixed;
-            bottom: 20px;
+            top: 20px;
             right: 20px;
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
@@ -315,7 +160,6 @@
         .back-to-top i {
             font-size: 24px;
         }
-
     </style>
 </head>
 
@@ -369,13 +213,13 @@
                 <div class="col-lg-6">
                     <h2>Skills</h2>
                     <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 90%;" data-width="90"></div>
+                        <div class="skill-progress-bar" style="width: 90%;" data-width="90">90%</div>
                     </div>
                     <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 80%;" data-width="80"></div>
+                        <div class="skill-progress-bar" style="width: 80%;" data-width="80">80%</div>
                     </div>
                     <div class="skill-progress mb-4">
-                        <div class="skill-progress-bar" style="width: 70%;" data-width="70"></div>
+                        <div class="skill-progress-bar" style="width: 70%;" data-width="70">70%</div>
                     </div>
                 </div>
             </div>
@@ -432,55 +276,58 @@
                             <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" rows="5" placeholder="Your Message"
+                            <textarea class="form-control" id="message" rows="4" placeholder="Your Message"
                                 required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-outline-light btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-dark btn-block">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Floating Boxes Animation -->
-    <div class="floating-boxes">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-    </div>
-
     <!-- Dark Mode Toggle Button -->
-    <button id="dark-mode-toggle" class="btn btn-primary">
-        <i id="dark-mode-icon" class="fa fa-moon-o"></i> Dark Mode
+    <button id="dark-mode-toggle">
+        <i id="dark-mode-icon" class="fas fa-moon"></i> Dark Mode
     </button>
 
     <!-- Back to Top Button -->
-    <button class="btn btn-primary back-to-top" id="back-to-top-btn">
-        <i class="fa fa-chevron-up"></i>
+    <button class="back-to-top" id="back-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- Floating Boxes Background -->
+    <div class="floating-boxes">
+        <div class="box" style="left: 10%; animation-duration: 15s;"></div>
+        <div class="box" style="left: 20%; animation-duration: 20s;"></div>
+        <div class="box" style="left: 30%; animation-duration: 25s;"></div>
+        <div class="box" style="left: 40%; animation-duration: 30s;"></div>
+        <div class="box" style="left: 50%; animation-duration: 35s;"></div>
+        <div class="box" style="left: 60%; animation-duration: 40s;"></div>
+        <div class="box" style="left: 70%; animation-duration: 45s;"></div>
+        <div class="box" style="left: 80%; animation-duration: 50s;"></div>
+        <div class="box" style="left: 90%; animation-duration: 55s;"></div>
+    </div>
+
+    <!-- jQuery, Bootstrap JS, and custom script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.12.0/intersection-observer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Smooth scrolling
+            // Smooth scrolling for navigation links
             $('a.nav-link').on('click', function (event) {
                 if (this.hash !== "") {
                     event.preventDefault();
-                    var hash = this.hash;
+                    const hash = this.hash;
                     $('html, body').animate({
-                        scrollTop: $(hash).offset().top - 56
-                    }, 800);
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
                 }
             });
 
-            // Navbar color change on scroll
+            // Navbar scroll effect
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 50) {
                     $('.navbar').addClass('navbar-scrolled');
@@ -490,49 +337,45 @@
             });
 
             // Dark mode toggle
-            $('#dark-mode-toggle').on('click', function () {
+            $('#dark-mode-toggle').click(function () {
                 $('body').toggleClass('dark-mode');
-                var isDarkMode = $('body').hasClass('dark-mode');
-                $('#dark-mode-icon').toggleClass('fa-moon-o fa-sun-o');
-                $(this).text(isDarkMode ? 'Light Mode' : 'Dark Mode');
+                const icon = $('#dark-mode-icon');
+                if ($('body').hasClass('dark-mode')) {
+                    icon.removeClass('fa-moon').addClass('fa-sun');
+                } else {
+                    icon.removeClass('fa-sun').addClass('fa-moon');
+                }
             });
 
-            // Typing effect for home section
-            const typed = new Typed('#typed-text', {
-                strings: ['Software Engineer', 'Electrical Engineering Student', 'Technology Enthusiast'],
-                typeSpeed: 50,
-                backSpeed: 30,
-                loop: true
-            });
-
-            // Lazy loading images
+            // Lazy load images
             const images = document.querySelectorAll('[data-src]');
-            const config = {
-                rootMargin: '0px 0px 50px 0px',
-                threshold: 0
-            };
-
-            let observer = new IntersectionObserver(function (entries, self) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        preloadImage(entry.target);
-                        self.unobserve(entry.target);
-                    }
-                });
-            }, config);
-
-            images.forEach(image => {
-                observer.observe(image);
-            });
-
-            function preloadImage(img) {
+            const preloadImage = img => {
                 const src = img.getAttribute('data-src');
                 if (!src) {
                     return;
                 }
-
                 img.src = src;
-            }
+            };
+
+            const imgOptions = {
+                threshold: 0,
+                rootMargin: '0px 0px 200px 0px'
+            };
+
+            const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        preloadImage(entry.target);
+                        imgObserver.unobserve(entry.target);
+                    }
+                });
+            }, imgOptions);
+
+            images.forEach(image => {
+                imgObserver.observe(image);
+            });
 
             // Back to top button
             $(window).scroll(function () {
@@ -568,7 +411,6 @@
             revealElements.forEach(element => {
                 observer.observe(element);
             });
-
         });
     </script>
 </body>
