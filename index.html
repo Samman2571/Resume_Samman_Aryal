@@ -4,253 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samman Aryal - Portfolio</title>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-KaN4TU+92UaLlI7PS1G7pZ1aBOsDKdfwOeK3HrHT73TA8q9jO/tiF8B5B0mP7Jw6rzueE6IlN2Sf0yRGo+vI0w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="scripts.js"></script>
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="56">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Samman Aryal</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="d-flex align-items-center">
-        <div class="container text-center">
-            <h1 class="display-4 mb-4">Software Engineer | Electrical Engineering Student</h1>
-            <p class="lead">Passionate about technology and innovation</p>
-            <a href="#contact" class="btn btn-outline-light btn-lg mt-4">Get In Touch</a>
+    <header id="home" class="vh-100 d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <h1 class="text-white">I am <span id="typed-text"></span></h1>
+            <a href="#about" class="btn btn-outline-light mt-4">Learn More</a>
+        </div>
+    </header>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center">About Me</h2>
+            <p class="text-muted text-center">I am a passionate software engineer and an electrical engineering student.</p>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
+    <section id="projects" class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h2>About Me</h2>
-                    <p>I am a dedicated Software Engineer and Electrical Engineering student currently pursuing my
-                        Bachelor's degree at Ravensburg Weingarten University of Applied Sciences in Germany. Originally
-                        from Nepal, I am passionate about technology and innovation, with a strong focus on software
-                        development and IT solutions.</p>
-                    <p>In my free time, I enjoy reading novels, playing football, and exploring nature through hiking
-                        in the woods.</p>
-                    <a href="#contact" class="btn btn-outline-light">Contact Me</a>
-                </div>
-                <div class="col-md-6">
-                    <div class="text-center">
-                        <img src="profile.jpg" alt="Samman Aryal" class="img-fluid rounded-circle" width="300">
-                    </div>
-                </div>
+            <h2 class="text-center">Projects</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-light filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="web">Web</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="mobile">Mobile</button>
+                <button class="btn btn-outline-light filter-btn" data-filter="other">Other</button>
+            </div>
+            <div class="row" id="projects-container">
+                <!-- Project items will be dynamically loaded here -->
+            </div>
+            <div class="text-center">
+                <button id="load-more-projects" class="btn btn-outline-light">Load More Projects</button>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience">
+    <section id="contact" class="py-5">
         <div class="container">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <ul>
-                    <!-- Experience Item 1 -->
-                    <li>
-                        <div class="timeline-image">
-                            <h4>01/09/2023 -<br>01/03/2024</h4>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Software Engineering Intern</h4>
-                                <h4 class="subheading">Mercedes-Benz AG, Stuttgart, Germany</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Automated authorization processes using Cypress, and developed a tool for test
-                                    support in Python.</p>
-                                <p>Conducted IT UAT tests on the 'MO360 MES' test environment and documented test
-                                    results in Jira.</p>
-                                <p>Utilized Rabbit MQ and Corpintra RX-Portal for testing MO360 MES environment.</p>
-                                <p>Maintained business rules for MO360 MES, reflecting production processes and work
-                                    steps.</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Experience Item 2 -->
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>01/09/2022 -<br>01/09/2023</h4>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>IT Back-Office / Developer</h4>
-                                <h4 class="subheading">Ecovery GmbH, Germany</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Collaborated with IT department to resolve technology issues and deficiencies.</p>
-                                <p>Managed MS-Office 365 as Administrator and developed apps using Flutter, Git, and
-                                    Dart.</p>
-                                <p>Experienced in project management using Jira and Confluence.</p>
-                                <p>Responsible for team onboarding, training, and performance evaluations.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+            <h2 class="text-center">Contact</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" class="form-control" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" class="form-control" rows="5" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="timeline">
-                <ul>
-                    <!-- Education Item 1 -->
-                    <li>
-                        <div class="timeline-image">
-                            <h4>01/03/2021 -<br>Current</h4>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Bachelor in Electrical Engineering and Information Technology</h4>
-                                <h4 class="subheading">Ravensburg Weingarten University of Applied Sciences,
-                                    Germany</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Currently pursuing a Bachelor's degree focusing on Electrical Engineering and
-                                    Information Technology.</p>
-                            </div>
-                        </div>
-                    </li>
+    <div class="floating-boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
 
-                    <!-- Education Item 2 -->
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>01/04/2017 -<br>Current</h4>
-                        </div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>Abitur</h4>
-                                <h4 class="subheading">Trinity International College, Kathmandu, Nepal</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Secondary Education focusing on science and technology.</p>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Programming Languages & Tools</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">HTML, CSS, JavaScript</li>
-                        <li class="list-group-item">Flutter, Git, Dart</li>
-                        <li class="list-group-item">Python, Java, C, TypeScript</li>
-                        <li class="list-group-item">Linux, Localizely</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h3>Project Management & Tools</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Jira, Confluence</li>
-                        <li class="list-group-item">Microsoft Office, Microsoft Office 365</li>
-                        <li class="list-group-item">Git, RabbitMQ, RX Portal</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>If you'd like to get in touch with me, please reach out using the following contact information:</p>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone-alt"></i> (+49) 15141369367</li>
-                        <li><i class="fas fa-envelope"></i> sammanaryal100@gmail.com</li>
-                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">LinkedIn Profile</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> Briachstr. 10, 88250, Weingarten, Germany</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <form action="#">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-outline-light">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2024 Samman Aryal. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-4+2zzZzHkeX5fP4h3bej4EujuD74WLrTQZGWADG2z5nY45NQyY27Zu24DoGW0Xw8/8xYMdZvMeL+1sVnSeJFRw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
-        integrity="sha512-cjSowI+JBMtMN5XO5xtGEPGHL5qI2n/ZZqgglUEp9Bl8Wq/GfP4UD7QHtJ3nTjmr2K3XXp3V2YocwKz05S6G/g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>
+    <button id="dark-mode-toggle" class="btn btn-outline-light position-fixed" style="bottom: 20px; right: 20px;">Dark Mode</button>
 </body>
 
 </html>
