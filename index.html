@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samman Aryal - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-KaN4TU+92UaLlI7PS1G7pZ1aBOsDKdfwOeK3HrHT73TA8q9jO/tiF8B5B0mP7Jw6rzueE6IlN2Sf0yRGo+vI0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 </head>
-<body>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="56">
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Samman Aryal</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#home">Samman Aryal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -40,27 +51,32 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home">
+    <section id="home" class="d-flex align-items-center">
         <div class="container text-center">
-            <h1>Samman Aryal</h1>
-            <p>Software Engineer | Electrical Engineering Student | Technology Enthusiast</p>
-            <a href="#contact" class="btn btn-outline-light btn-lg">Contact Me</a>
+            <h1 class="display-4 mb-4">Software Engineer | Electrical Engineering Student</h1>
+            <p class="lead">Passionate about technology and innovation</p>
+            <a href="#contact" class="btn btn-outline-light btn-lg mt-4">Get In Touch</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
+            <div class="row align-items-center">
+                <div class="col-md-6">
                     <h2>About Me</h2>
-                    <p>Hello! I'm Samman Aryal, a passionate software engineer with a background in electrical engineering and a strong interest in technology.</p>
-                    <p>I am currently pursuing my Bachelor's degree in Electrical Engineering and Information Technology at Ravensburg Weingarten University of Applied Sciences, Germany.</p>
-                    <p>Originally from Nepal, I am fluent in Nepali and proficient in English and German.</p>
-                    <p>Feel free to explore my portfolio and get in touch!</p>
-                    <p><a href="mailto:sammanaryal100@gmail.com">sammanaryal100@gmail.com</a> | <a href="tel:+4915141369367">+49 15141369367</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">Samman Aryal</a></p>
-                    <p>Address: Briachstr. 10, 88250, Weingarten, Germany</p>
+                    <p>I am a dedicated Software Engineer and Electrical Engineering student currently pursuing my
+                        Bachelor's degree at Ravensburg Weingarten University of Applied Sciences in Germany. Originally
+                        from Nepal, I am passionate about technology and innovation, with a strong focus on software
+                        development and IT solutions.</p>
+                    <p>In my free time, I enjoy reading novels, playing football, and exploring nature through hiking
+                        in the woods.</p>
+                    <a href="#contact" class="btn btn-outline-light">Contact Me</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        <img src="profile.jpg" alt="Samman Aryal" class="img-fluid rounded-circle" width="300">
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,50 +85,47 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2>Professional Experience</h2>
+            <h2>Experience</h2>
             <div class="timeline">
                 <ul>
+                    <!-- Experience Item 1 -->
                     <li>
                         <div class="timeline-image">
-                            <h4>01/09/2023 - 01/03/2024</h4>
+                            <h4>01/09/2023 -<br>01/03/2024</h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>Software Engineering Intern</h4>
-                                <h4 class="subheading">Product-centric Application Development, IT Powertrain</h4>
-                                <p>Mercedes-Benz AG, Stuttgart, Germany</p>
+                                <h4 class="subheading">Mercedes-Benz AG, Stuttgart, Germany</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Achievements:</p>
-                                <ul>
-                                    <li>Automated authorization processes using Cypress.</li>
-                                    <li>Developed a testing support tool in Python.</li>
-                                    <li>Conducted IT UAT tests on MO360 MES test environment.</li>
-                                    <li>Documented test results in Jira.</li>
-                                    <li>Utilized Rabbit MQ and Corpintra RX-Portal for testing MO360 MES environment.</li>
-                                    <li>Maintained the technical rule set of MO360 MES, reflecting production processes and workflows.</li>
-                                </ul>
+                                <p>Automated authorization processes using Cypress, and developed a tool for test
+                                    support in Python.</p>
+                                <p>Conducted IT UAT tests on the 'MO360 MES' test environment and documented test
+                                    results in Jira.</p>
+                                <p>Utilized Rabbit MQ and Corpintra RX-Portal for testing MO360 MES environment.</p>
+                                <p>Maintained business rules for MO360 MES, reflecting production processes and work
+                                    steps.</p>
                             </div>
                         </div>
                     </li>
+
+                    <!-- Experience Item 2 -->
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <h4>01/09/2022 - 01/09/2023</h4>
+                            <h4>01/09/2022 -<br>01/09/2023</h4>
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
                                 <h4>IT Back-Office / Developer</h4>
-                                <p>Ecovery GmbH, Germany</p>
+                                <h4 class="subheading">Ecovery GmbH, Germany</h4>
                             </div>
                             <div class="timeline-body">
-                                <p>Achievements:</p>
-                                <ul>
-                                    <li>Collaborated with IT department to resolve technology issues.</li>
-                                    <li>Project management using tools such as Jira and Confluence.</li>
-                                    <li>Responsible for hiring, training, and onboarding new team members.</li>
-                                    <li>Managed MS-Office 365 as an administrator.</li>
-                                    <li>Developed and maintained apps using Flutter, Git, and Dart.</li>
-                                </ul>
+                                <p>Collaborated with IT department to resolve technology issues and deficiencies.</p>
+                                <p>Managed MS-Office 365 as Administrator and developed apps using Flutter, Git, and
+                                    Dart.</p>
+                                <p>Experienced in project management using Jira and Confluence.</p>
+                                <p>Responsible for team onboarding, training, and performance evaluations.</p>
                             </div>
                         </div>
                     </li>
@@ -125,13 +138,42 @@
     <section id="education">
         <div class="container">
             <h2>Education</h2>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3>Bachelor in Electrical Engineering and Information Technology</h3>
-                    <p>Ravensburg Weingarten University of Applied Sciences, Germany</p>
-                    <p>Doggenriedstraße, 88250, Weingarten, Germany</p>
-                    <p>Website: <a href="https://www.rwu.de">www.rwu.de</a></p>
-                </div>
+            <div class="timeline">
+                <ul>
+                    <!-- Education Item 1 -->
+                    <li>
+                        <div class="timeline-image">
+                            <h4>01/03/2021 -<br>Current</h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Bachelor in Electrical Engineering and Information Technology</h4>
+                                <h4 class="subheading">Ravensburg Weingarten University of Applied Sciences,
+                                    Germany</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Currently pursuing a Bachelor's degree focusing on Electrical Engineering and
+                                    Information Technology.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Education Item 2 -->
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>01/04/2017 -<br>Current</h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Abitur</h4>
+                                <h4 class="subheading">Trinity International College, Kathmandu, Nepal</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p>Secondary Education focusing on science and technology.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -141,40 +183,24 @@
         <div class="container">
             <h2>Skills</h2>
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>Nepali (Native)</li>
-                        <li>English (C1)</li>
-                        <li>German (B2)</li>
-                        <li>Hindi (C1)</li>
+                <div class="col-md-6">
+                    <h3>Programming Languages & Tools</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">HTML, CSS, JavaScript</li>
+                        <li class="list-group-item">Flutter, Git, Dart</li>
+                        <li class="list-group-item">Python, Java, C, TypeScript</li>
+                        <li class="list-group-item">Linux, Localizely</li>
                     </ul>
-                    <h3>Software Proficiency</h3>
-                    <ul>
-                        <li>Microsoft Office / Microsoft Office 365 (Administrator)</li>
-                        <li>Microsoft PowerPoint, Word, Outlook</li>
-                        <li>Jira, Confluence</li>
-                    </ul>
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>HTML, Flutter, Git, Dart, C, Java, JavaScript, Localizely, Linux, Python, TypeScript</li>
-                    </ul>
-                    <h3>Tools</h3>
-                    <ul>
-                        <li>RabbitMQ, RX Portal</li>
+                </div>
+                <div class="col-md-6">
+                    <h3>Project Management & Tools</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Jira, Confluence</li>
+                        <li class="list-group-item">Microsoft Office, Microsoft Office 365</li>
+                        <li class="list-group-item">Git, RabbitMQ, RX Portal</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <!-- Projects will be dynamically loaded here using JavaScript -->
-            <div id="projects-container" class="row"></div>
-            <button id="load-more-projects" class="btn btn-outline-primary">Load More Projects</button>
         </div>
     </section>
 
@@ -182,34 +208,49 @@
     <section id="contact">
         <div class="container">
             <h2>Contact Me</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>If you'd like to get in touch with me, please reach out using the following contact information:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone-alt"></i> (+49) 15141369367</li>
+                        <li><i class="fas fa-envelope"></i> sammanaryal100@gmail.com</li>
+                        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/samman-aryal-7646a8225/?originalSubdomain=de">LinkedIn Profile</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> Briachstr. 10, 88250, Weingarten, Germany</li>
+                    </ul>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
+                <div class="col-md-6">
+                    <form action="#">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-light">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-outline-primary">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>&copy; 2024 Samman Aryal. All rights reserved.</p>
+            <p>&copy; 2024 Samman Aryal. All Rights Reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-4+2zzZzHkeX5fP4h3bej4EujuD74WLrTQZGWADG2z5nY45NQyY27Zu24DoGW0Xw8/8xYMdZvMeL+1sVnSeJFRw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
+        integrity="sha512-cjSowI+JBMtMN5XO5xtGEPGHL5qI2n/ZZqgglUEp9Bl8Wq/GfP4UD7QHtJ3nTjmr2K3XXp3V2YocwKz05S6G/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
