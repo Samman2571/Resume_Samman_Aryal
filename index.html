@@ -7,7 +7,7 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
+   <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -80,30 +80,11 @@
             color: #000;
         }
 
-        .skill-progress {
-            background-color: #e0e0e0;
-            border-radius: 25px;
-        }
-
-        .skill-progress-bar {
-            height: 20px;
-            background-color: #333;
-            border-radius: 25px;
-            line-height: 20px;
-            color: #fff;
-            text-align: center;
-        }
-
         /* Reveal animation */
         .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-in-out;
-        }
-
-        .reveal.active {
             opacity: 1;
             transform: translateY(0);
+            transition: all 0.5s ease-in-out;
         }
 
         /* Floating boxes */
@@ -203,6 +184,7 @@
             }
         }
 
+        /* Circular frame */
         .circular-frame {
             width: 50%;
             max-width: 200px;
@@ -239,8 +221,6 @@
         }
 
         /* CSS for Education Section */
-
-        /* Hover Animation */
         .card {
             transition: transform 0.2s ease-in-out;
         }
@@ -253,100 +233,95 @@
             filter: grayscale(0%);
         }
 
+        /* Styles for Skills Section */
+        .section {
+            padding: 80px 0;
+            background-color: #f8f9fa; /* Light background color */
+        }
 
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333; /* Dark title color */
+        }
 
-/* Styles for Skills Section */
-.section {
-    padding: 80px 0;
-    background-color: #f8f9fa; /* Light background color */
-}
+        .skill {
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 50px;
-    color: #333; /* Dark title color */
-}
+        .progress-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: auto; /* Adjust height based on content */
+            margin-top: 10px;
+        }
 
-.skill {
-    margin-bottom: 30px;
-    text-align: center;
-}
+        .progress-bar {
+            position: relative;
+            background-color: #f0f0f0; /* Light background */
+            border-radius: 5px;
+            height: 25px;
+            line-height: 25px;
+            text-align: left;
+            padding: 0;
+            margin-bottom: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transition for background color */
+        }
 
-.progress-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: auto; /* Adjust height based on content */
-    margin-top: 10px;
-}
+        .progress-bar:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background-color: #007bff; /* Blue progress color */
+            z-index: -1;
+            transition: width 1.5s ease; /* Smooth transition for width */
+        }
 
-.progress-bar {
-    position: relative;
-    background-color: #f0f0f0; /* Light background */
-    border-radius: 5px;
-    height: 25px;
-    line-height: 25px;
-    text-align: left;
-    padding: 0;
-    margin-bottom: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transition for background color */
-}
+        .progress-bar:hover:before {
+            width: calc(var(--width) * 1%);
+        }
 
-.progress-bar:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background-color: #007bff; /* Blue progress color */
-    z-index: -1;
-    transition: width 1.5s ease; /* Smooth transition for width */
-}
+        .skill-name {
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            padding: 0 10px;
+            color: #333; /* Skill name color */
+        }
 
-.progress-bar:hover:before {
-    width: calc(var(--width) * 1%);
-}
+        .progress-value {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            color: #007bff; /* Blue text color */
+            font-weight: bold;
+            z-index: 1;
+            opacity: 1; /* Always visible */
+            transition: opacity 0.3s ease;
+        }
 
-.skill-name {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    padding: 0 10px;
-    color: #333; /* Skill name color */
-}
+        .progress-bar:hover .progress-value {
+            opacity: 1; /* Show on hover */
+        }
 
-.progress-value {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    color: #007bff; /* Blue text color */
-    font-weight: bold;
-    z-index: 1;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
-}
+        .progress-bar:hover {
+            background-color: #007bff; /* Blue background on hover */
+        }
 
-.progress-bar:hover .progress-value {
-    opacity: 1; /* Show on hover */
-}
-
-.progress-bar:hover {
-    background-color: #007bff; /* Blue background on hover */
-}
-
-@media (max-width: 767px) {
-    .section-title {
-        font-size: 2rem; /* Adjust font size for smaller screens */
-    }
-}
-
-
-
+        @media (max-width: 767px) {
+            .section-title {
+                font-size: 2rem; /* Adjust font size for smaller screens */
+            }
+        }
 
         /* Collapsible experience section */
         .collapsible {
@@ -380,7 +355,7 @@
 
         .content {
             padding: 0 18px;
-            max-height: 0;
+            max-height: 1000px; /* Adjust as needed */
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             background-color: #f9f9f9;
