@@ -276,10 +276,11 @@
     height: 25px;
     line-height: 25px;
     text-align: left;
-    padding: 0 10px;
+    padding: 0;
     margin-bottom: 10px;
     overflow: hidden;
     cursor: pointer;
+    transition: background-color 0.6s ease;
 }
 
 .progress-bar:before {
@@ -295,7 +296,14 @@
 }
 
 .progress-bar:hover:before {
-    width: 100%;
+    width: calc(var(--width) * 1%);
+}
+
+.skill-name {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
 }
 
 /* Persistent display of progress value */
@@ -319,6 +327,7 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 
 
 
@@ -463,7 +472,8 @@
         </div>
     </section>
 
-<!-- Skills Section -->
+
+    <!-- Skills Section -->
 <section id="skills" class="section">
     <div class="container">
         <h2 class="section-title">Skills</h2>
@@ -472,10 +482,18 @@
                 <div class="skill">
                     <h3>Programming Languages</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
-                        <div class="progress-bar" data-width="90%"><span class="progress-value">90%</span></div>
-                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
-                        <div class="progress-bar" data-width="75%"><span class="progress-value">75%</span></div>
+                        <div class="progress-bar" data-width="80">
+                            <span class="skill-name">C</span>
+                        </div>
+                        <div class="progress-bar" data-width="90">
+                            <span class="skill-name">C++</span>
+                        </div>
+                        <div class="progress-bar" data-width="85">
+                            <span class="skill-name">Python</span>
+                        </div>
+                        <div class="progress-bar" data-width="75">
+                            <span class="skill-name">JavaScript</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -483,10 +501,18 @@
                 <div class="skill">
                     <h3>Project Management</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="70%"><span class="progress-value">70%</span></div>
-                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
-                        <div class="progress-bar" data-width="75%"><span class="progress-value">75%</span></div>
-                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
+                        <div class="progress-bar" data-width="70">
+                            <span class="skill-name">Agile</span>
+                        </div>
+                        <div class="progress-bar" data-width="80">
+                            <span class="skill-name">Scrum</span>
+                        </div>
+                        <div class="progress-bar" data-width="75">
+                            <span class="skill-name">Kanban</span>
+                        </div>
+                        <div class="progress-bar" data-width="85">
+                            <span class="skill-name">Waterfall</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -494,16 +520,25 @@
                 <div class="skill">
                     <h3>Communication</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="90%"><span class="progress-value">90%</span></div>
-                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
-                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
-                        <div class="progress-bar" data-width="88%"><span class="progress-value">88%</span></div>
+                        <div class="progress-bar" data-width="90">
+                            <span class="skill-name">Verbal</span>
+                        </div>
+                        <div class="progress-bar" data-width="85">
+                            <span class="skill-name">Written</span>
+                        </div>
+                        <div class="progress-bar" data-width="80">
+                            <span class="skill-name">Presentation</span>
+                        </div>
+                        <div class="progress-bar" data-width="88">
+                            <span class="skill-name">Negotiation</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
     
     <!-- Education Section -->
