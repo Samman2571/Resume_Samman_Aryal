@@ -255,8 +255,7 @@
 
 
 
-
- /* CSS for skills section */
+/* CSS for skills section */
 .skill {
     margin-bottom: 30px;
     text-align: center;
@@ -266,13 +265,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 120px; /* Adjust height based on content */
+    height: auto; /* Adjust height based on content */
     margin-top: 10px;
 }
 
 .progress-bar {
     position: relative;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Light background */
     border-radius: 5px;
     height: 25px;
     line-height: 25px;
@@ -281,7 +280,6 @@
     margin-bottom: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: width 0.6s ease;
 }
 
 .progress-bar:before {
@@ -291,17 +289,26 @@
     left: 0;
     height: 100%;
     width: 0;
-    background-color: #007bff;
+    background-color: #007bff; /* Blue progress color */
     z-index: -1;
-    transition: width 0.6s ease;
+    transition: width 1.5s ease; /* Smooth transition */
 }
 
-/* Animation for progress bars */
 .progress-bar:hover:before {
     width: 100%;
 }
 
-/* Smooth reveal animation */
+/* Persistent display of progress value */
+.progress-value {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #fff; /* White text color */
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Animation for progress bars */
 .skill {
     opacity: 0;
     transform: translateY(50px);
@@ -312,6 +319,7 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 
 
         /* Collapsible experience section */
@@ -455,7 +463,6 @@
         </div>
     </section>
 
-
 <!-- Skills Section -->
 <section id="skills" class="section">
     <div class="container">
@@ -465,10 +472,10 @@
                 <div class="skill">
                     <h3>Programming Languages</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="80%">C</div>
-                        <div class="progress-bar" data-width="90%">C++</div>
-                        <div class="progress-bar" data-width="85%">Python</div>
-                        <div class="progress-bar" data-width="75%">JavaScript</div>
+                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
+                        <div class="progress-bar" data-width="90%"><span class="progress-value">90%</span></div>
+                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
+                        <div class="progress-bar" data-width="75%"><span class="progress-value">75%</span></div>
                     </div>
                 </div>
             </div>
@@ -476,10 +483,10 @@
                 <div class="skill">
                     <h3>Project Management</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="70%">Agile</div>
-                        <div class="progress-bar" data-width="80%">Scrum</div>
-                        <div class="progress-bar" data-width="75%">Kanban</div>
-                        <div class="progress-bar" data-width="85%">Waterfall</div>
+                        <div class="progress-bar" data-width="70%"><span class="progress-value">70%</span></div>
+                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
+                        <div class="progress-bar" data-width="75%"><span class="progress-value">75%</span></div>
+                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
                     </div>
                 </div>
             </div>
@@ -487,10 +494,10 @@
                 <div class="skill">
                     <h3>Communication</h3>
                     <div class="progress-wrapper">
-                        <div class="progress-bar" data-width="90%">Verbal</div>
-                        <div class="progress-bar" data-width="85%">Written</div>
-                        <div class="progress-bar" data-width="80%">Presentation</div>
-                        <div class="progress-bar" data-width="88%">Negotiation</div>
+                        <div class="progress-bar" data-width="90%"><span class="progress-value">90%</span></div>
+                        <div class="progress-bar" data-width="85%"><span class="progress-value">85%</span></div>
+                        <div class="progress-bar" data-width="80%"><span class="progress-value">80%</span></div>
+                        <div class="progress-bar" data-width="88%"><span class="progress-value">88%</span></div>
                     </div>
                 </div>
             </div>
