@@ -475,19 +475,19 @@
                     <h3>Programming Languages</h3>
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="80">
-                            <span class="skill-name">C</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="C">C</span>
                             <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="90">
-                            <span class="skill-name">C++</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="C++">C++</span>
                             <span class="progress-value">90%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
-                            <span class="skill-name">Python</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Python">Python</span>
                             <span class="progress-value">85%</span>
                         </div>
                         <div class="progress-bar" data-width="75">
-                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="JavaScript">JavaScript</span>
                             <span class="progress-value">75%</span>
                         </div>
                     </div>
@@ -498,19 +498,19 @@
                     <h3>Project Management</h3>
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="70">
-                            <span class="skill-name">Agile</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Agile">Agile</span>
                             <span class="progress-value">70%</span>
                         </div>
                         <div class="progress-bar" data-width="80">
-                            <span class="skill-name">Scrum</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Scrum">Scrum</span>
                             <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="75">
-                            <span class="skill-name">Kanban</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Kanban">Kanban</span>
                             <span class="progress-value">75%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
-                            <span class="skill-name">Waterfall</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Waterfall">Waterfall</span>
                             <span class="progress-value">85%</span>
                         </div>
                     </div>
@@ -521,19 +521,19 @@
                     <h3>Communication</h3>
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="90">
-                            <span class="skill-name">Verbal</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Verbal">Verbal</span>
                             <span class="progress-value">90%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
-                            <span class="skill-name">Written</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Written">Written</span>
                             <span class="progress-value">85%</span>
                         </div>
                         <div class="progress-bar" data-width="80">
-                            <span class="skill-name">Presentation</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Presentation">Presentation</span>
                             <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="88">
-                            <span class="skill-name">Negotiation</span>
+                            <span class="skill-name" data-toggle="tooltip" data-placement="top" title="Negotiation">Negotiation</span>
                             <span class="progress-value">88%</span>
                         </div>
                     </div>
@@ -619,10 +619,11 @@
     </div>
 
 
-<!-- jQuery, Bootstrap JS, Typed.js, and custom script -->
+<!-- jQuery, Bootstrap JS, Typed.js, CountUp.js, and custom script -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM fully loaded and parsed');
@@ -768,8 +769,33 @@
             $(this).css('width', targetWidth + '%').text(targetWidth + '%');
         });
 
+        // Tooltip initialization
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // Animated counters for progress values
+        const progressValues = document.querySelectorAll('.progress-value');
+
+        progressValues.forEach(function(value) {
+            var countUp = new CountUp(value, parseInt(value.innerText), {
+                duration: 2,  // Duration of the animation in seconds
+                separator: '', // Separator for thousands
+            });
+
+            var waypoint = new Waypoint({
+                element: value,
+                handler: function() {
+                    countUp.start();
+                    this.destroy();  // Only animate once
+                },
+                offset: '80%'  // Adjust this offset as needed
+            });
+        });
+
     });
 </script>
+
 
 
 
