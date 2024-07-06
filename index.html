@@ -394,6 +394,120 @@
         </div>
     </section>
 
+
+<!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h2 class="text-center mb-5">Skills</h2>
+
+        <!-- Programming Languages -->
+        <div class="skill-category mb-5">
+            <h3 class="text-center">Programming Languages</h3>
+            <div class="skill">
+                <h4>Java</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        80%
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Python</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%;" aria-valuenow="70"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        70%
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>JavaScript</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        60%
+                    </div>
+                </div>
+            </div>
+            <!-- Add more programming languages as needed -->
+        </div>
+
+        <!-- Project Management -->
+        <div class="skill-category mb-5">
+            <h3 class="text-center">Project Management</h3>
+            <div class="skill">
+                <h4>Jira</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        75%
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Trello</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-secondary" role="progressbar" style="width: 65%;" aria-valuenow="65"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        65%
+                    </div>
+                </div>
+            </div>
+            <!-- Add more project management tools as needed -->
+        </div>
+
+        <!-- MS Office -->
+        <div class="skill-category mb-5">
+            <h3 class="text-center">MS Office</h3>
+            <div class="skill">
+                <h4>Word</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        85%
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Excel</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        80%
+                    </div>
+                </div>
+            </div>
+            <!-- Add more MS Office applications as needed -->
+        </div>
+
+        <!-- Communication -->
+        <div class="skill-category mb-5">
+            <h3 class="text-center">Communication</h3>
+            <div class="skill">
+                <h4>Verbal Communication</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        90%
+                    </div>
+                </div>
+            </div>
+            <div class="skill">
+                <h4>Written Communication</h4>
+                <div class="progress">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                        aria-valuemin="0" aria-valuemax="100" data-toggle="tooltip" title="Click to adjust">
+                        85%
+                    </div>
+                </div>
+            </div>
+            <!-- Add more communication skills as needed -->
+        </div>
+
+    </div>
+</section>
+    
     <!-- Education Section -->
     <section id="education" style="background-color: #f2f2f2; color: #333;">
         <div class="container">
@@ -421,6 +535,9 @@
         </div>
     </section>
 
+
+ 
+    
     <!-- Contact Section -->
     <section id="contact" style="background-color: #f2f2f2; color: #333;">
         <div class="container">
@@ -462,7 +579,7 @@
         <div class="box" style="left: 90%; animation-duration: 55s;"></div>
     </div>
 
-<!-- jQuery, Bootstrap JS, and custom script -->
+<!-- jQuery, Bootstrap JS, Typed.js, and custom script -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -494,7 +611,7 @@
 
         // Typing animation
         var typed = new Typed("#typed-text", {
-            strings: ["an Engineer", " a Developer",  " a Tech Enthusiast"],
+            strings: ["an Engineer", "a Developer", "a Tech Enthusiast"],
             typeSpeed: 100,
             backSpeed: 50,
             loop: true
@@ -589,7 +706,23 @@
             observer.observe(element);
         });
     });
+
+    // Skills section script
+    $(document).ready(function () {
+        // Click handler for adjusting progress bar width
+        $('.progress-bar').on('click', function () {
+            // Example: Increase width by 10% on each click (up to 100%)
+            let currentWidth = $(this).width();
+            let newWidth = currentWidth + 10;
+            if (newWidth > 100) {
+                newWidth = 100;
+            }
+            $(this).css('width', newWidth + '%');
+            $(this).text(newWidth + '%');
+        });
+    });
 </script>
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
 
