@@ -256,38 +256,63 @@
 
 
 
-        /* CSS for skills section */
+ /* CSS for skills section */
 .skill {
     margin-bottom: 30px;
     text-align: center;
 }
 
-.progress {
-    height: 25px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    overflow: hidden;
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px; /* Adjust height based on content */
+    margin-top: 10px;
 }
 
 .progress-bar {
-    color: #fff;
-    font-weight: bold;
-    font-size: 14px;
+    position: relative;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 25px;
     line-height: 25px;
-    text-align: center;
+    text-align: left;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
     transition: width 0.6s ease;
 }
 
-/* Animation for skills section */
-.skill.reveal {
-    opacity: 0;
-    transform: translateY(50px);
+.progress-bar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #007bff;
+    z-index: -1;
+    transition: width 0.6s ease;
 }
 
-.skill.reveal.active {
+/* Animation for progress bars */
+.progress-bar:hover:before {
+    width: 100%;
+}
+
+/* Smooth reveal animation */
+.skill {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.skill.reveal {
     opacity: 1;
     transform: translateY(0);
 }
+
 
         /* Collapsible experience section */
         .collapsible {
@@ -436,27 +461,36 @@
     <div class="container">
         <h2 class="section-title">Skills</h2>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="skill">
                     <h3>Programming Languages</h3>
-                    <div class="progress">
-                        <div class="progress-bar html" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                    </div>
-                    <h3>Project Management</h3>
-                    <div class="progress">
-                        <div class="progress-bar pm" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                    <div class="progress-wrapper">
+                        <div class="progress-bar" data-width="80%">C</div>
+                        <div class="progress-bar" data-width="90%">C++</div>
+                        <div class="progress-bar" data-width="85%">Python</div>
+                        <div class="progress-bar" data-width="75%">JavaScript</div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="skill">
-                    <h3>MS Office</h3>
-                    <div class="progress">
-                        <div class="progress-bar office" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                    <h3>Project Management</h3>
+                    <div class="progress-wrapper">
+                        <div class="progress-bar" data-width="70%">Agile</div>
+                        <div class="progress-bar" data-width="80%">Scrum</div>
+                        <div class="progress-bar" data-width="75%">Kanban</div>
+                        <div class="progress-bar" data-width="85%">Waterfall</div>
                     </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="skill">
                     <h3>Communication</h3>
-                    <div class="progress">
-                        <div class="progress-bar communication" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                    <div class="progress-wrapper">
+                        <div class="progress-bar" data-width="90%">Verbal</div>
+                        <div class="progress-bar" data-width="85%">Written</div>
+                        <div class="progress-bar" data-width="80%">Presentation</div>
+                        <div class="progress-bar" data-width="88%">Negotiation</div>
                     </div>
                 </div>
             </div>
@@ -536,7 +570,7 @@
         <div class="box" style="left: 90%; animation-duration: 55s;"></div>
     </div>
 
-<!-- jQuery, Bootstrap JS, Typed.js, and custom script -->
+
 <!-- jQuery, Bootstrap JS, Typed.js, and custom script -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -664,7 +698,7 @@
             observer.observe(element);
         });
 
-        // Skills section animations on scroll
+        // Skills section reveal animation on scroll
         const skillElements = document.querySelectorAll('.skill');
 
         const skillObserver = new IntersectionObserver((entries, skillObserver) => {
@@ -680,14 +714,15 @@
             skillObserver.observe(element);
         });
 
-        // Skills section click functionality
+        // Progress bar click functionality
         $('.progress-bar').on('click', function () {
-            const targetWidth = $(this).attr('aria-valuenow');
+            const targetWidth = $(this).data('width');
             $(this).css('width', targetWidth + '%').text(targetWidth + '%');
         });
 
     });
 </script>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
