@@ -280,7 +280,7 @@
     margin-bottom: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: background-color 0.6s ease;
+    transition: background-color 0.3s ease;
 }
 
 .progress-bar:before {
@@ -304,6 +304,23 @@
     position: relative;
     z-index: 1;
     padding: 0 10px;
+    color: #333; /* Skill name color */
+}
+
+.progress-value {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #fff; /* White text color */
+    font-weight: bold;
+    z-index: 1;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.progress-bar:hover .progress-value {
+    opacity: 1; /* Show on hover */
 }
 
 /* Persistent display of progress value */
@@ -327,7 +344,6 @@
     opacity: 1;
     transform: translateY(0);
 }
-
 
 
 
@@ -484,15 +500,19 @@
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="80">
                             <span class="skill-name">C</span>
+                            <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="90">
                             <span class="skill-name">C++</span>
+                            <span class="progress-value">90%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
                             <span class="skill-name">Python</span>
+                            <span class="progress-value">85%</span>
                         </div>
                         <div class="progress-bar" data-width="75">
                             <span class="skill-name">JavaScript</span>
+                            <span class="progress-value">75%</span>
                         </div>
                     </div>
                 </div>
@@ -503,15 +523,19 @@
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="70">
                             <span class="skill-name">Agile</span>
+                            <span class="progress-value">70%</span>
                         </div>
                         <div class="progress-bar" data-width="80">
                             <span class="skill-name">Scrum</span>
+                            <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="75">
                             <span class="skill-name">Kanban</span>
+                            <span class="progress-value">75%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
                             <span class="skill-name">Waterfall</span>
+                            <span class="progress-value">85%</span>
                         </div>
                     </div>
                 </div>
@@ -522,15 +546,19 @@
                     <div class="progress-wrapper">
                         <div class="progress-bar" data-width="90">
                             <span class="skill-name">Verbal</span>
+                            <span class="progress-value">90%</span>
                         </div>
                         <div class="progress-bar" data-width="85">
                             <span class="skill-name">Written</span>
+                            <span class="progress-value">85%</span>
                         </div>
                         <div class="progress-bar" data-width="80">
                             <span class="skill-name">Presentation</span>
+                            <span class="progress-value">80%</span>
                         </div>
                         <div class="progress-bar" data-width="88">
                             <span class="skill-name">Negotiation</span>
+                            <span class="progress-value">88%</span>
                         </div>
                     </div>
                 </div>
@@ -538,6 +566,7 @@
         </div>
     </div>
 </section>
+
 
 
     
