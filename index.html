@@ -188,6 +188,7 @@
             from {
                 width: 0
             }
+
             to {
                 width: 100%
             }
@@ -198,6 +199,7 @@
             to {
                 border-color: transparent
             }
+
             50% {
                 border-color: orange;
             }
@@ -213,10 +215,6 @@
             width: 100%;
             height: auto;
             transition: transform 0.3s ease;
-        }
-
-        .circular-frame:hover img {
-            transform: scale(1.1);
         }
 
         /* Ensure images are rounded */
@@ -265,6 +263,7 @@
             outline: none;
             font-size: 15px;
             transition: background-color 0.3s;
+            margin-bottom: 10px;
         }
 
         .collapsible:hover {
@@ -289,6 +288,7 @@
             overflow: hidden;
             transition: max-height 0.2s ease-out;
             background-color: #f9f9f9;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -299,7 +299,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">SAMMAN ARYAL</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
@@ -338,259 +339,230 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h2>About Me</h2>
-                    <p style="text-align: justify;">I am Samman Aryal, a motivated Nepalese national currently pursuing a Bachelor's degree in Electrical Engineering and Information Technology at Ravensburg Weingarten University in Germany. With a solid foundation in software engineering and a keen interest in IT applications, I have gained valuable experience through internships at Mercedes-Benz AG and Ecovery GmbH. My practical skills include automating processes, developing testing tools, and managing IT projects using tools like Jira and Confluence. Fluent in English, German (B2 level), and Hindi, I thrive in dynamic environments where my technical acumen and passion for technology drive me to contribute effectively. Beyond academics, I enjoy reading novels, playing football, and exploring nature.</p>
+                    <p style="text-align: justify;">I am Samman Aryal, a motivated Nepalese national currently
+                        pursuing my bachelor's degree in Computer Information Systems (CIS) at Texas State University
+                        in San Marcos, TX. I am passionate about web development and have experience in front-end
+                        technologies such as HTML, CSS, JavaScript, and Bootstrap. I am also familiar with back-end
+                        development using technologies like Node.js and Express.js. I am a quick learner and
+                        enthusiastic about applying my knowledge to real-world scenarios. In my free time, I enjoy
+                        playing soccer and exploring new technologies.</p>
                 </div>
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
-                    <div class="circular-frame half-size">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Picture2.jpeg" alt="My Picture" class="img-fluid rounded-circle">
+                <div class="col-lg-6">
+                    <div class="circular-frame mx-auto d-block">
+                        <img src="Picture.jpg" class="rounded-circle img-fluid" alt="Samman Aryal">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" style="background-color: #f2f2f2; color: #333;">
+    <!-- Experience Section -->
+    <section id="projects">
         <div class="container">
-            <h2 class="text-center mb-5">Experience</h2>
-            <div class="row">
-                <div class="col-md-3 project-item reveal" id="card-thesis">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="RWU" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">RWU</h5>
-                            <p class="card-text">Bachelor Thesis : Physics Informed Neural Network</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-mercedes">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="Mercedes Benz AG" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">Mercedes Benz AG</h5>
-                            <p class="card-text">Internship : Software Engineering</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-ecovery">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="eCovery GmbH" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">eCovery GmbH</h5>
-                            <p class="card-text">Working Student: Software Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-uhlmann">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="Uhlmann Pac-Systeme" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">Uhlmann Pac-Systeme</h5>
-                            <p class="card-text">Working Student</p>
-                        </div>
-                    </div>
-                </div>
+            <h2 class="text-center">Experience</h2>
+
+            <!-- Experience 1 -->
+            <button class="collapsible">Front-End Developer Intern at XYZ Tech</button>
+            <div class="content">
+                <p style="text-align: justify;">As a Front-End Developer Intern at XYZ Tech, I was involved in
+                    developing user interfaces for web applications. My responsibilities included collaborating with
+                    the design team to implement mockups into responsive web pages using HTML, CSS, and JavaScript. I
+                    gained hands-on experience with version control systems like Git and learned to work efficiently
+                    within Agile development methodologies.</p>
             </div>
+
+            <!-- Experience 2 -->
+            <button class="collapsible">Web Development Intern at ABC Solutions</button>
+            <div class="content">
+                <p style="text-align: justify;">During my internship at ABC Solutions, I worked on various projects
+                    focusing on both front-end and back-end development. I developed dynamic web pages using
+                    JavaScript frameworks like React.js and integrated RESTful APIs to enhance the functionality of
+                    web applications. This experience improved my problem-solving skills and gave me exposure to
+                    industry-standard web development practices.</p>
+            </div>
+
         </div>
     </section>
 
     <!-- Education Section -->
-    <section id="education" style="background-color: #f2f2f2; color: #333;">
+    <section id="education">
         <div class="container">
-            <h2 class="text-center mb-5">Education</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">Hochschule Ravensburg Weingarten</h5>
-                            <p class="card-text">Bachelor in Electrical Engineering and Information Technology</p>
-                            <p class="card-text">March 2021 - Present</p>
-                        </div>
+            <h2 class="text-center">Education</h2>
+
+            <!-- Education 1 -->
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="tsu-logo.jpg" class="card-img" alt="Texas State University">
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="card h-100">
+                    <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Trinity International College</h5>
-                            <p class="card-text">Abitur (High School Abitur equivalent)</p>
-                            <p class="card-text">April 2017 - September 2019</p>
+                            <h5 class="card-title">Bachelor's Degree in Computer Information Systems</h5>
+                            <p class="card-text">Texas State University, San Marcos, TX</p>
+                            <p class="card-text"><small class="text-muted">Expected Graduation: May 2024</small></p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Education 2 -->
+            <div class="card mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="high-school-logo.jpg" class="card-img" alt="High School Name">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">High School Diploma</h5>
+                            <p class="card-text">High School Name, Location</p>
+                            <p class="card-text"><small class="text-muted">Graduated: June 2019</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" style="background-color: #f2f2f2; color: #333;">
+    <section id="contact">
         <div class="container">
-            <h2 class="text-center mb-5">Contact Me</h2>
+            <h2 class="text-center">Contact Me</h2>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <form action="/send-email" method="POST">
+                <div class="col-lg-6">
+                    <form>
                         <div class="form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3"
+                                placeholder="Enter your message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-dark btn-block">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <i id="dark-mode-icon" class="fas fa-sun"></i> Dark Mode
+    </button>
+
+    <!-- Floating Boxes for Decoration -->
+    <div class="floating-boxes">
+        <div class="box" style="top: 20%; left: 10%;"></div>
+        <div class="box" style="top: 50%; left: 70%;"></div>
+        <div class="box" style="top: 80%; left: 30%;"></div>
+        <div class="box" style="top: 30%; left: 50%;"></div>
+        <div class="box" style="top: 70%; left: 90%;"></div>
+    </div>
+
     <!-- Back to Top Button -->
-    <button class="back-to-top" id="back-to-top-btn">
+    <button class="back-to-top" onclick="backToTop()">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Floating Boxes Background -->
-    <div class="floating-boxes">
-        <div class="box" style="left: 10%; animation-duration: 15s;"></div>
-        <div class="box" style="left: 20%; animation-duration: 20s;"></div>
-        <div class="box" style="left: 30%; animation-duration: 25s;"></div>
-        <div class="box" style="left: 40%; animation-duration: 30s;"></div>
-        <div class="box" style="left: 50%; animation-duration: 35s;"></div>
-        <div class="box" style="left: 60%; animation-duration: 40s;"></div>
-        <div class="box" style="left: 70%; animation-duration: 45s;"></div>
-        <div class="box" style="left: 80%; animation-duration: 50s;"></div>
-        <div class="box" style="left: 90%; animation-duration: 55s;"></div>
-    </div>
+    <!-- Bootstrap and JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/5861b3d5f4.js" crossorigin="anonymous"></script>
+    <script>
+        // Typing Animation
+        const typedTextSpan = document.getElementById('typed-text');
+        const textArray = ["a Web Developer", "a Problem Solver", "a Team Player"];
+        const typingDelay = 200;
+        const erasingDelay = 100;
+        const newTextDelay = 2000; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
 
-<!-- jQuery, Bootstrap JS, and custom script -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM fully loaded and parsed');
-
-        // Smooth scrolling for navigation links
-        $('a.nav-link').on('click', function (event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                const hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function () {
-                    window.location.hash = hash;
-                });
-            }
-        });
-
-        // Navbar scroll effect
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 50) {
-                $('.navbar').addClass('navbar-scrolled');
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
             } else {
-                $('.navbar').removeClass('navbar-scrolled');
-            }
-        });
-
-        // Typing animation
-        var typed = new Typed("#typed-text", {
-            strings: ["an Engineer", " a Developer",  " a Tech Enthusiast"],
-            typeSpeed: 100,
-            backSpeed: 50,
-            loop: true
-        });
-
-        // Experience card click handlers
-        var cards = document.querySelectorAll('.project-item');
-        cards.forEach(function(card) {
-            card.addEventListener('click', function() {
-                console.log('Card clicked:', this.id);
-                var contentId = this.id.replace('card-', 'content-');
-                toggleContent(contentId);
-            });
-        });
-
-        function toggleContent(contentId) {
-            console.log('Toggling content:', contentId);
-            var content = document.getElementById(contentId);
-            if (content) {
-                if (content.style.display === 'none' || content.style.display === '') {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            } else {
-                console.error('Content element not found:', contentId);
+                setTimeout(erase, newTextDelay);
             }
         }
 
-        // Lazy load images
-        const images = document.querySelectorAll('[data-src]');
-        const preloadImage = img => {
-            const src = img.getAttribute('data-src');
-            if (!src) {
-                return;
-            }
-            img.src = src;
-        };
-
-        const imgOptions = {
-            threshold: 0,
-            rootMargin: '0px 0px 200px 0px'
-        };
-
-        const imgObserver = new IntersectionObserver((entries, imgObserver) => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    preloadImage(entry.target);
-                    imgObserver.unobserve(entry.target);
-                }
-            });
-        }, imgOptions);
-
-        images.forEach(image => {
-            imgObserver.observe(image);
-        });
-
-        // Back to top button
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.back-to-top').fadeIn();
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
             } else {
-                $('.back-to-top').fadeOut();
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
             }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+            if (textArray.length) setTimeout(type, newTextDelay + 250);
         });
 
-        $('#back-to-top-btn').click(function () {
-            $('html, body').animate({ scrollTop: 0 }, 800);
-            return false;
-        });
+        // Dark Mode Toggle Function
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+        }
 
-        // Text reveal animation on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const observerOptions = {
-            rootMargin: '0px',
-            threshold: 0.3
+        // Navbar Background Change on Scroll
+        const navbar = document.querySelector('.navbar');
+        window.onscroll = function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
+        // Back to Top Button
+        const backToTopButton = document.querySelector(".back-to-top");
 
-        revealElements.forEach(element => {
-            observer.observe(element);
-        });
-    });
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        window.addEventListener("scroll", scrollFunction);
+
+        function scrollFunction() {
+            if (window.pageYOffset > 300) { // Show backToTopButton
+                if (!backToTopButton.classList.contains("btnEntrance")) {
+                    backToTopButton.classList.remove("btnExit");
+                    backToTopButton.classList.add("btnEntrance");
+                    backToTopButton.style.display = "block";
+                }
+            } else { // Hide backToTopButton
+                if (backToTopButton.classList.contains("btnEntrance")) {
+                    backToTopButton.classList.remove("btnEntrance");
+                    backToTopButton.classList.add("btnExit");
+                    setTimeout(function () {
+                        backToTopButton.style.display = "none";
+                    }, 250);
+                }
+            }
+        }
+
+        // Smooth Scrolling
+        $('a[href*="#"]').on('click', function (e) {
+            e.preventDefault()
+
+            $('html, body').animate(
+                {
+                    scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+    </script>
 </body>
 
 </html>
