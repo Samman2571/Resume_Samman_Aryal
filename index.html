@@ -501,12 +501,14 @@
         <div class="box" style="left: 90%; animation-duration: 55s;"></div>
     </div>
 
-  <!-- jQuery, Bootstrap JS, and custom script -->
+<!-- jQuery, Bootstrap JS, and custom script -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-    $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOM fully loaded and parsed');
+
         // Smooth scrolling for navigation links
         $('a.nav-link').on('click', function (event) {
             if (this.hash !== "") {
@@ -538,14 +540,27 @@
         });
 
         // Experience card click handlers
-        $('.project-item').on('click', function() {
-            var contentId = $(this).attr('id').replace('card-', 'content-');
-            toggleContent(contentId);
+        var cards = document.querySelectorAll('.project-item');
+        cards.forEach(function(card) {
+            card.addEventListener('click', function() {
+                console.log('Card clicked:', this.id);
+                var contentId = this.id.replace('card-', 'content-');
+                toggleContent(contentId);
+            });
         });
 
         function toggleContent(contentId) {
-            $('.content').not('#' + contentId).slideUp();
-            $('#' + contentId).slideToggle();
+            console.log('Toggling content:', contentId);
+            var content = document.getElementById(contentId);
+            if (content) {
+                if (content.style.display === 'none' || content.style.display === '') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            } else {
+                console.error('Content element not found:', contentId);
+            }
         }
 
         // Lazy load images
