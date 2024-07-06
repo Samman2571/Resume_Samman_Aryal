@@ -411,40 +411,40 @@
     </section>
 
     <!-- Projects Section -->
-      <section id="projects" style="background-color: #f2f2f2; color: #333;">
+    <section id="projects" style="background-color: #f2f2f2; color: #333;">
         <div class="container">
             <h2 class="text-center mb-5">Experience</h2>
             <div class="row">
-                <div class="col-md-3 project-item reveal">
+                <div class="col-md-3 project-item reveal" id="card-thesis">
                     <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="My Picture" class="card-img-top rounded-circle">
+                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="RWU" class="card-img-top rounded-circle">
                         <div class="card-body">
-                            <h5 class="card-title">Hochschule Ravensburg Weingarten</h5>
-                            <p class="card-text">Bachelor Thesis</p>
+                            <h5 class="card-title">RWU</h5>
+                            <p class="card-text">Bachelor Thesis : Physics Informed Neural Network</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 project-item reveal">
+                <div class="col-md-3 project-item reveal" id="card-mercedes">
                     <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="My Picture" class="card-img-top rounded-circle">
+                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="Mercedes Benz AG" class="card-img-top rounded-circle">
                         <div class="card-body">
                             <h5 class="card-title">Mercedes Benz AG</h5>
-                            <p class="card-text">Internship</p>
+                            <p class="card-text">Internship : Software Engineering</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 project-item reveal">
+                <div class="col-md-3 project-item reveal" id="card-ecovery">
                     <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="My Picture" class="card-img-top rounded-circle">
+                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="eCovery GmbH" class="card-img-top rounded-circle">
                         <div class="card-body">
                             <h5 class="card-title">eCovery GmbH</h5>
-                            <p class="card-text">Working Student</p>
+                            <p class="card-text">Working Student: Software Developer</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 project-item reveal">
+                <div class="col-md-3 project-item reveal" id="card-uhlmann">
                     <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="My Picture" class="card-img-top rounded-circle">
+                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="Uhlmann Pac-Systeme" class="card-img-top rounded-circle">
                         <div class="card-body">
                             <h5 class="card-title">Uhlmann Pac-Systeme</h5>
                             <p class="card-text">Working Student</p>
@@ -452,40 +452,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row mt-5">
-                <div class="col-md-12">
-                    <button type="button" class="collapsible">Thesis Project</button>
-                    <div class="content">
-                        <p>
-                            During my Bachelor's thesis, I simulated 2-dimensional heat conduction using a Physics Informed Neural Network (PINN). This project involved implementing machine learning models using PyTorch in Python. I utilized PyTorch for developing the neural network architecture and integrating physics-based constraints. This experience enhanced my skills in machine learning, particularly in applying deep learning techniques to solve complex physical problems.
-                        </p>
-                        <p><strong>Tools:</strong> PyTorch, Python, Jupyter Notebook</p>
-                        <p><strong>Skills:</strong> Machine Learning, Physics Informed Neural Networks (PINNs), Python Programming</p>
-                    </div>
-
-                    <button type="button" class="collapsible">Internship at Mercedes-Benz AG</button>
-                    <div class="content">
-                        <p>
-                            During my internship at Mercedes-Benz AG, I alongside my collegue developed automated testing tools for Motor Sytem and Car System.  I also automated a authorization process using Cypress. Additionally, I collaborated with teams using Agile methodologies, utilizing Jira for project management and Confluence for documentation. This experience provided me with valuable insights into automotive technology and software engineering practices in a corporate environment.
-                        </p>
-                        <p><strong>Tools:</strong> Python, Cypress, Jira, Confluence</p>
-                        <p><strong>Skills:</strong> Software Development, Agile Methodologies, Automotive Technology</p>
-                    </div>
-
-                    <button type="button" class="collapsible">Working Student at eCovery GmbH</button>
-                    <div class="content">
-                        <p>
-                            As a working student at eCovery GmbH, I was involved in developing IT solutions. My responsibilities included project management using tools like Jira and Confluence, managing MS Office 365 as an administrator and testing the application.
-                        </p>
-                        <p><strong>Tools:</strong>  Firebase , Git, Jira , Confluence</p>
-                        <p><strong>Skills:</strong> It, Back Office , Project Management</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
-
 
 
 <!-- Skills Section -->
@@ -746,21 +714,6 @@
             skillObserver.observe(element);
         });
 
-          // Collapsible sections for experience
-            var coll = document.getElementsByClassName("collapsible");
-            for (var i = 0; i < coll.length; i++) {
-                coll[i].addEventListener("click", function () {
-                    this.classList.toggle("active");
-                    var content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            }
-        });
-        
         // Progress bar click functionality
         $('.progress-bar').on('click', function () {
             const targetWidth = $(this).data('width');
