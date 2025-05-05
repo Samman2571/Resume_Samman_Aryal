@@ -239,6 +239,14 @@
             background-color: #f8f9fa; /* Light background color */
         }
 
+       .card-content {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
@@ -431,71 +439,73 @@
         </div>
     </section>
 
-  <!-- Projects Section -->
+  
+<!-- Projects Section -->
 <section id="projects" style="background-color: #f2f2f2; color: #333;">
     <div class="container">
         <h2 class="text-center mb-5">Experience</h2>
         <div class="row">
-
-            <!-- RWU -->
+            <!-- Thesis -->
             <div class="col-md-3 project-item reveal" id="card-thesis">
                 <div class="card h-100">
                     <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="RWU" class="card-img-top rounded-circle">
                     <div class="card-body">
                         <h5 class="card-title">RWU</h5>
                         <p class="card-text">Bachelor Thesis: Physics Informed Neural Network</p>
-                        <div class="card-description mt-2" id="content-thesis" style="display: none;">
-                            <p>Developed a neural network model that incorporates physical laws (PDEs) directly into its training process, enhancing prediction accuracy with fewer data samples.</p>
-                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-12 card-content" id="content-thesis" style="display: none;">
+                <p class="p-3">At RWU, I conducted research on Physics-Informed Neural Networks (PINNs), focusing on applying deep learning techniques to solve partial differential equations for physical systems.</p>
+            </div>
 
-            <!-- Mercedes Benz AG -->
+            <!-- Mercedes -->
             <div class="col-md-3 project-item reveal" id="card-mercedes">
                 <div class="card h-100">
                     <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="Mercedes Benz AG" class="card-img-top rounded-circle">
                     <div class="card-body">
                         <h5 class="card-title">Mercedes Benz AG</h5>
                         <p class="card-text">Internship: Software Engineering</p>
-                        <div class="card-description mt-2" id="content-mercedes" style="display: none;">
-                            <p>Worked on internal software tooling for diagnostics and automation in vehicle systems. Collaborated with cross-functional teams to improve development pipelines.</p>
-                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-12 card-content" id="content-mercedes" style="display: none;">
+                <p class="p-3">During my internship at Mercedes-Benz AG, I contributed to backend and frontend systems, gaining hands-on experience in enterprise-level software development and agile methodologies.</p>
+            </div>
 
-            <!-- eCovery GmbH -->
+            <!-- eCovery -->
             <div class="col-md-3 project-item reveal" id="card-ecovery">
                 <div class="card h-100">
                     <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="eCovery GmbH" class="card-img-top rounded-circle">
                     <div class="card-body">
                         <h5 class="card-title">eCovery GmbH</h5>
                         <p class="card-text">Working Student: Software Developer</p>
-                        <div class="card-description mt-2" id="content-ecovery" style="display: none;">
-                            <p>Contributed to the development of a digital physiotherapy platform using modern web technologies. Focused on backend logic and API integrations.</p>
-                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-12 card-content" id="content-ecovery" style="display: none;">
+                <p class="p-3">As a working student at eCovery GmbH, I worked on digital physiotherapy solutions, implementing new features and improving user experience across platforms.</p>
+            </div>
 
-            <!-- Uhlmann Pac-Systeme -->
+            <!-- Uhlmann -->
             <div class="col-md-3 project-item reveal" id="card-uhlmann">
                 <div class="card h-100">
                     <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="Uhlmann Pac-Systeme" class="card-img-top rounded-circle">
                     <div class="card-body">
                         <h5 class="card-title">Uhlmann Pac-Systeme</h5>
                         <p class="card-text">Working Student</p>
-                        <div class="card-description mt-2" id="content-uhlmann" style="display: none;">
-                            <p>Supported automation processes and created tools for process visualization in pharmaceutical packaging lines. Developed internal dashboards for monitoring systems.</p>
-                        </div>
                     </div>
                 </div>
             </div>
-
+            <div class="col-12 card-content" id="content-uhlmann" style="display: none;">
+                <p class="p-3">At Uhlmann Pac-Systeme, I supported software automation and data integration efforts, enhancing packaging solutions in a high-tech manufacturing environment.</p>
+            </div>
         </div>
     </div>
 </section>
+
+
+
 
 
     <!-- Skills Section -->
@@ -652,27 +662,13 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Floating Boxes Background -->
-    <div class="floating-boxes">
-        <div class="box" style="left: 10%; animation-duration: 15s;"></div>
-        <div class="box" style="left: 20%; animation-duration: 20s;"></div>
-        <div class="box" style="left: 30%; animation-duration: 25s;"></div>
-        <div class="box" style="left: 40%; animation-duration: 30s;"></div>
-        <div class="box" style="left: 50%; animation-duration: 35s;"></div>
-        <div class="box" style="left: 60%; animation-duration: 40s;"></div>
-        <div class="box" style="left: 70%; animation-duration: 45s;"></div>
-        <div class="box" style="left: 80%; animation-duration: 50s;"></div>
-        <div class="box" style="left: 90%; animation-duration: 55s;"></div>
-    </div>
-
-
-<!-- jQuery, Bootstrap JS, Typed.js, CountUp.js, and custom script -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.min.js"></script>
+
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         console.log('DOM fully loaded and parsed');
 
         // Smooth scrolling for navigation links
@@ -690,82 +686,45 @@
 
         // Navbar scroll effect
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 50) {
-                $('.navbar').addClass('navbar-scrolled');
-            } else {
-                $('.navbar').removeClass('navbar-scrolled');
-            }
+            $('.navbar').toggleClass('navbar-scrolled', $(this).scrollTop() > 50);
         });
 
         // Typing animation
-        var typed = new Typed("#typed-text", {
+        new Typed("#typed-text", {
             strings: ["an Engineer", "a Developer", "a Tech Enthusiast"],
             typeSpeed: 100,
             backSpeed: 50,
             loop: true
         });
 
-        // Experience card click handlers
-        var cards = document.querySelectorAll('.project-item');
-        cards.forEach(function(card) {
-            card.addEventListener('click', function() {
-                console.log('Card clicked:', this.id);
-                var contentId = this.id.replace('card-', 'content-');
-                toggleContent(contentId);
-            });
+        // Individual experience card click toggle
+        $('.project-item').on('click', function () {
+            const clickedId = $(this).attr('id').replace('card-', 'content-');
+            $('.card-content').not('#' + clickedId).slideUp(); // Hide others
+            $('#' + clickedId).slideToggle(); // Toggle selected
         });
-
-        function toggleContent(contentId) {
-            console.log('Toggling content:', contentId);
-            var content = document.getElementById(contentId);
-            if (content) {
-                if (content.style.display === 'none' || content.style.display === '') {
-                    content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
-                }
-            } else {
-                console.error('Content element not found:', contentId);
-            }
-        }
 
         // Lazy load images
         const images = document.querySelectorAll('[data-src]');
         const preloadImage = img => {
             const src = img.getAttribute('data-src');
-            if (!src) {
-                return;
-            }
-            img.src = src;
+            if (src) img.src = src;
         };
 
-        const imgOptions = {
-            threshold: 0,
-            rootMargin: '0px 0px 200px 0px'
-        };
-
-        const imgObserver = new IntersectionObserver((entries, imgObserver) => {
+        const imgObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
+                if (entry.isIntersecting) {
                     preloadImage(entry.target);
-                    imgObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
-        }, imgOptions);
+        }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
 
-        images.forEach(image => {
-            imgObserver.observe(image);
-        });
+        images.forEach(image => imgObserver.observe(image));
 
         // Back to top button
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                $('.back-to-top').fadeIn();
-            } else {
-                $('.back-to-top').fadeOut();
-            }
+            $('.back-to-top').fadeToggle($(this).scrollTop() > 100);
         });
 
         $('#back-to-top-btn').click(function () {
@@ -773,80 +732,60 @@
             return false;
         });
 
-        // Text reveal animation on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const observerOptions = {
-            rootMargin: '0px',
-            threshold: 0.3
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Text reveal on scroll
+        const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.3 });
 
-        revealElements.forEach(element => {
-            observer.observe(element);
-        });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-        // Skills section reveal animation on scroll
-        const skillElements = document.querySelectorAll('.skill');
-
-        const skillObserver = new IntersectionObserver((entries, skillObserver) => {
+        // Skills section reveal
+        const skillObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('reveal');
-                    skillObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.3 });
 
-        skillElements.forEach(element => {
-            skillObserver.observe(element);
-        });
+        document.querySelectorAll('.skill').forEach(el => skillObserver.observe(el));
 
-        // Progress bar click functionality
+        // Progress bar animation on click
         $('.progress-bar').on('click', function () {
             const targetWidth = $(this).data('width');
             $(this).css('width', targetWidth + '%').text(targetWidth + '%');
         });
 
-        // Tooltip initialization
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
+        // Tooltips
+        $('[data-toggle="tooltip"]').tooltip();
 
-        // Animated counters for progress values
+        // CountUp counters
         const progressValues = document.querySelectorAll('.progress-value');
-
-        progressValues.forEach(function(value) {
+        progressValues.forEach(function (value) {
             var countUp = new CountUp(value, parseInt(value.innerText), {
-                duration: 2,  // Duration of the animation in seconds
-                separator: '', // Separator for thousands
+                duration: 2,
+                separator: ''
             });
 
-            var waypoint = new Waypoint({
+            new Waypoint({
                 element: value,
-                handler: function() {
+                handler: function () {
                     countUp.start();
-                    this.destroy();  // Only animate once
+                    this.destroy();
                 },
-                offset: '80%'  // Adjust this offset as needed
+                offset: '80%'
             });
         });
 
     });
 </script>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </body>
 
 </html>
