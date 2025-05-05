@@ -360,6 +360,18 @@
             transition: max-height 0.2s ease-out;
             background-color: #f9f9f9;
         }
+
+       .card-description {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+}
+
+.card-description.show {
+    display: block;
+    opacity: 1;
+}
     </style>
 </head>
 
@@ -419,50 +431,71 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" style="background-color: #f2f2f2; color: #333;">
-        <div class="container">
-            <h2 class="text-center mb-5">Experience</h2>
-            <div class="row">
-                <div class="col-md-3 project-item reveal" id="card-thesis">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="RWU" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">RWU</h5>
-                            <p class="card-text">Bachelor Thesis : Physics Informed Neural Network</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-mercedes">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="Mercedes Benz AG" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">Mercedes Benz AG</h5>
-                            <p class="card-text">Internship : Software Engineering</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-ecovery">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="eCovery GmbH" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">eCovery GmbH</h5>
-                            <p class="card-text">Working Student: Software Developer</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 project-item reveal" id="card-uhlmann">
-                    <div class="card h-100">
-                        <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="Uhlmann Pac-Systeme" class="card-img-top rounded-circle">
-                        <div class="card-body">
-                            <h5 class="card-title">Uhlmann Pac-Systeme</h5>
-                            <p class="card-text">Working Student</p>
+  <!-- Projects Section -->
+<section id="projects" style="background-color: #f2f2f2; color: #333;">
+    <div class="container">
+        <h2 class="text-center mb-5">Experience</h2>
+        <div class="row">
+
+            <!-- RWU -->
+            <div class="col-md-3 project-item reveal" id="card-thesis">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/RWU.jpg" alt="RWU" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">RWU</h5>
+                        <p class="card-text">Bachelor Thesis: Physics Informed Neural Network</p>
+                        <div class="card-description mt-2" id="content-thesis" style="display: none;">
+                            <p>Developed a neural network model that incorporates physical laws (PDEs) directly into its training process, enhancing prediction accuracy with fewer data samples.</p>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Mercedes Benz AG -->
+            <div class="col-md-3 project-item reveal" id="card-mercedes">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Mercedes.jpeg" alt="Mercedes Benz AG" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes Benz AG</h5>
+                        <p class="card-text">Internship: Software Engineering</p>
+                        <div class="card-description mt-2" id="content-mercedes" style="display: none;">
+                            <p>Worked on internal software tooling for diagnostics and automation in vehicle systems. Collaborated with cross-functional teams to improve development pipelines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- eCovery GmbH -->
+            <div class="col-md-3 project-item reveal" id="card-ecovery">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/eCovery.png" alt="eCovery GmbH" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">eCovery GmbH</h5>
+                        <p class="card-text">Working Student: Software Developer</p>
+                        <div class="card-description mt-2" id="content-ecovery" style="display: none;">
+                            <p>Contributed to the development of a digital physiotherapy platform using modern web technologies. Focused on backend logic and API integrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uhlmann Pac-Systeme -->
+            <div class="col-md-3 project-item reveal" id="card-uhlmann">
+                <div class="card h-100">
+                    <img src="https://raw.githubusercontent.com/Samman2571/Resume_Samman_Aryal/main/Uhlmann.jpg" alt="Uhlmann Pac-Systeme" class="card-img-top rounded-circle">
+                    <div class="card-body">
+                        <h5 class="card-title">Uhlmann Pac-Systeme</h5>
+                        <p class="card-text">Working Student</p>
+                        <div class="card-description mt-2" id="content-uhlmann" style="display: none;">
+                            <p>Supported automation processes and created tools for process visualization in pharmaceutical packaging lines. Developed internal dashboards for monitoring systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
 
     <!-- Skills Section -->
